@@ -71,7 +71,7 @@ from ..moshi.utils.connection import create_ssl_context, get_lan_ip
 from ..moshi.utils.logging import setup_logger, ColorizedLog
 from .loaders_mlx import get_personaplex_lm
 from .lm_gen_mlx import PersonaPlexLmGen
-from .utils.sampling import Sampler
+from moshi_mlx.utils.sampling import Sampler
 
 logger = setup_logger(__name__)
 

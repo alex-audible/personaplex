@@ -1,0 +1,47 @@
+2026-01-28 13:14:31,474 INFO moshi_mlx.loaders_mlx: Creating PersonaPlex MLX model (num_slices=8) ...
+2026-01-28 13:14:31,480 INFO moshi_mlx.loaders_mlx: Loading MLX weights from personaplex_mlx.safetensors ...
+2026-01-28 13:14:31,481 INFO moshi_mlx.loaders_mlx: Loaded 523 weight tensors
+2026-01-28 13:14:32,112 INFO moshi_mlx.loaders_mlx: PersonaPlex MLX model loaded successfully
+2026-01-28 13:14:33,850 INFO moshi_mlx.lm_gen_mlx: PersonaPlexLmGen created: dep_q=8, other_q=8, max_steps=609
+2026-01-28 13:14:34,540 INFO moshi_mlx.lm_gen_mlx: PersonaPlexLmGen created: dep_q=8, other_q=8, max_steps=609
+2026-01-28 13:14:34,541 INFO moshi_mlx.lm_gen_mlx: Loading voice prompt embeddings from: /Users/220611g/.cache/huggingface/hub/models--nvidia--personaplex-7b-v1/snapshots/f69e74f60b25bded21b08fd932c334e47e28f184/voices/NATF2.pt
+2026-01-28 13:14:34,542 INFO moshi_mlx.lm_gen_mlx: Voice prompt embeddings: shape=(51, 1, 1, 4096)
+2026-01-28 13:14:34,542 INFO moshi_mlx.lm_gen_mlx: Voice prompt cache: shape=(1, 17, 4)
+2026-01-28 13:14:34,542 INFO moshi_mlx.lm_gen_mlx: System prompt phase 1: voice prompt (embeddings)
+2026-01-28 13:14:34,542 INFO moshi_mlx.lm_gen_mlx: Replaying 51 voice prompt embeddings through transformer
+2026-01-28 13:14:37,450 INFO moshi_mlx.lm_gen_mlx: Restoring voice prompt cache: CT=4, step_idx=51
+2026-01-28 13:14:37,450 INFO moshi_mlx.lm_gen_mlx: Voice prompt embeddings replay complete. step_idx=51
+2026-01-28 13:14:37,450 INFO moshi_mlx.lm_gen_mlx: System prompt phase 2: audio silence (6 frames)
+2026-01-28 13:14:37,837 INFO moshi_mlx.lm_gen_mlx: System prompt phase 3: text prompt (26 tokens)
+2026-01-28 13:14:39,465 INFO moshi_mlx.lm_gen_mlx: System prompt phase 4: audio silence (6 frames)
+2026-01-28 13:14:39,842 INFO moshi_mlx.lm_gen_mlx: System prompts complete. step_idx=89
+[1;34mInfo:[0m seeded all RNGs with 42424242
+[1;34mInfo:[0m loading PersonaPlex MLX model from ./personaplex_mlx.safetensors
+[1;34mInfo:[0m model loaded
+[1;34mInfo:[0m downloading Mimi weights from nvidia/personaplex-7b-v1
+[1;34mInfo:[0m loading audio tokenizer from /Users/220611g/.cache/huggingface/hub/models--nvidia--personaplex-7b-v1/snapshots/f69e74f60b25bded21b08fd932c334e47e28f184/tokenizer-e351c8d8-checkpoint125.safetensors
+[1;34mInfo:[0m audio tokenizer loaded
+[1;34mInfo:[0m downloading text tokenizer from nvidia/personaplex-7b-v1
+[1;34mInfo:[0m loading text tokenizer from /Users/220611g/.cache/huggingface/hub/models--nvidia--personaplex-7b-v1/snapshots/f69e74f60b25bded21b08fd932c334e47e28f184/tokenizer_spm_32k_3.model
+[1;34mInfo:[0m text tokenizer loaded
+[1;34mInfo:[0m loading input audio from assets/test/input_assistant.wav
+[1;34mInfo:[0m input audio: 960000 samples, 500 frames (40.00s)
+[1;34mInfo:[0m Found voices in HF cache: /Users/220611g/.cache/huggingface/hub/models--nvidia--personaplex-7b-v1/snapshots/f69e74f60b25bded21b08fd932c334e47e28f184/voices
+[1;34mInfo:[0m resolved voice prompt: /Users/220611g/.cache/huggingface/hub/models--nvidia--personaplex-7b-v1/snapshots/f69e74f60b25bded21b08fd932c334e47e28f184/voices/NATF2.pt
+[1;34mInfo:[0m voice prompt: 51 frames (4.08s)
+[1;34mInfo:[0m using greedy decoding (temp=0)
+[1;34mInfo:[0m max_steps=609 (inference=500, prompt_overhead=89, margin=20)
+[1;34mInfo:[0m warming up the model
+[1;34mInfo:[0m warmup complete
+[1;34mInfo:[0m text prompt: 26 tokens
+[1;34mInfo:[0m running system prompt pipeline
+[1;34mInfo:[0m system prompts complete at step_idx=89
+[1;34mInfo:[0m running inference: 500 steps
+[1;34mInfo:[0m step 100/500 (9.7 tok/s, 10.3s elapsed)
+[1;34mInfo:[0m step 200/500 (9.5 tok/s, 21.1s elapsed)
+[1;34mInfo:[0m step 300/500 (9.2 tok/s, 32.5s elapsed)
+[1;34mInfo:[0m step 400/500 (9.2 tok/s, 43.6s elapsed)
+[1;34mInfo:[0m step 500/500 (9.1 tok/s, 54.8s elapsed)
+[1;34mInfo:[0m inference complete: 500 steps in 54.8s (9.1 tok/s)
+[1;34mInfo:[0m wrote output audio to /tmp/claude/output_mlx_assistant.wav
+[1;34mInfo:[0m wrote output text to /tmp/claude/output_mlx_assistant.json

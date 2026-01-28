@@ -1,0 +1,40 @@
+Loading PersonaPlex MLX model from ./personaplex_mlx.safetensors...
+Model loaded in 0.7s
+Config: d_model=4096, layers=32, heads=32, depformer_slices=8, other_codebooks=8
+
+Creating PersonaPlexLmGen wrapper...
+Voice prompt: /Users/220611g/.cache/huggingface/hub/models--nvidia--personaplex-7b-v1/snapshots/f69e74f60b25bded21b08fd932c334e47e28f184/voices/NATF2.pt
+
+Loading voice prompt embeddings...
+Voice prompt loaded in 615.3ms
+
+Running system prompt pipeline (voice + silence + text + silence)...
+System prompts complete in 4053.3ms (step_idx=68)
+
+Warming up inference frames (5 steps)...
+
+Benchmarking inference frames (50 steps)...
+
+============================================================
+  STAGE 3 VOICE PROMPT BENCHMARK
+============================================================
+  Model:           PersonaPlex 7B (MLX)
+  Voice prompt:    NATF2.pt
+  Steps:           50
+  Frame budget:    80.0 ms
+  Stage 1 baseline: 59.7 ms (full sample)
+------------------------------------------------------------
+  ONE-TIME OVERHEAD:
+    Voice prompt load:    615.3 ms
+    System prompts:       4053.3 ms
+    Total setup:          4668.6 ms
+------------------------------------------------------------
+  PER-FRAME INFERENCE (after system prompts):
+    Mean:          63.0 ms
+    P50:           63.1 ms
+    P95:           63.5 ms
+    Min:           62.2 ms
+    Max:           64.6 ms
+    Within 80ms:   YES
+    vs Stage 1:    +3.3ms (+5.6%)
+============================================================

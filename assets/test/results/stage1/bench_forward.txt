@@ -1,4 +1,4 @@
-Loading PersonaPlex MLX model from personaplex_mlx.safetensors...
+Loading PersonaPlex MLX model from ./personaplex_mlx.safetensors...
 Model loaded in 0.7s
 Config: d_model=4096, layers=32, heads=32, depformer_slices=8, other_codebooks=8
 
@@ -17,19 +17,19 @@ Benchmarking transformer only, 50 steps...
                    310.2 ms (full frame)
 ------------------------------------------------------------
   TRANSFORMER ONLY (comparable to MPS lm_forward=266ms):
-    Mean:          50.2 ms
-    P50:           50.1 ms
-    P95:           51.1 ms
-    Min:           49.5 ms
-    Max:           51.6 ms
+    Mean:          50.3 ms
+    P50:           49.9 ms
+    P95:           52.2 ms
+    Min:           49.4 ms
+    Max:           60.9 ms
     Speedup vs MPS: 5.3x
 ------------------------------------------------------------
   FULL SAMPLE (transformer + depformer + sampling):
-    Mean:          59.7 ms
-    P50:           59.6 ms
-    P95:           60.6 ms
-    Min:           58.9 ms
-    Max:           60.7 ms
+    Mean:          59.6 ms
+    P50:           59.8 ms
+    P95:           60.5 ms
+    Min:           58.2 ms
+    Max:           60.8 ms
     Speedup vs MPS: 5.2x (vs full frame 310ms)
     Within 80ms:   YES
 ============================================================
