@@ -134,6 +134,7 @@ class PersonaPlexLmGen:
         )
 
         # Voice prompt state
+        self.voice_prompt: Optional[str] = None  # Path to loaded voice prompt
         self.voice_prompt_embeddings: Optional[mx.array] = None
         self.voice_prompt_cache: Optional[mx.array] = None
         self.voice_prompt_audio: Optional[np.ndarray] = None
@@ -284,6 +285,7 @@ class PersonaPlexLmGen:
         if wav.ndim == 1:
             wav = wav[None, :]  # [1, T]
 
+        self.voice_prompt = path
         self.voice_prompt_audio = wav
         self.voice_prompt_embeddings = None
         self.voice_prompt_cache = None
@@ -328,6 +330,7 @@ class PersonaPlexLmGen:
             self.voice_prompt_cache.shape,
         )
 
+        self.voice_prompt = path
         self.voice_prompt_audio = None
 
     # ------------------------------------------------------------------
