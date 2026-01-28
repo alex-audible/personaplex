@@ -1,0 +1,43 @@
+PersonaPlex MLX Offline Inference - Stage 2 Smoke Test
+======================================================
+Date: 2026-01-28
+Seed: 42424242 (greedy decoding)
+Input: assets/test/input_assistant.wav (40.00s, 500 frames)
+
+--- Run Log ---
+seeded all RNGs with 42424242
+loading PersonaPlex MLX model from personaplex_mlx.safetensors
+model loaded
+downloading Mimi weights from nvidia/personaplex-7b-v1
+loading audio tokenizer from tokenizer-e351c8d8-checkpoint125.safetensors
+audio tokenizer loaded
+downloading text tokenizer from nvidia/personaplex-7b-v1
+loading text tokenizer from tokenizer_spm_32k_3.model
+text tokenizer loaded
+loading input audio from assets/test/input_assistant.wav
+input audio: 960000 samples, 500 frames (40.00s)
+using greedy decoding (temp=0)
+warming up the model
+warmup complete
+injecting text prompt: 26 tokens
+text prompt injection complete
+running inference: 500 steps
+step 100/500 (9.8 tok/s, 10.2s elapsed)
+step 200/500 (9.5 tok/s, 20.9s elapsed)
+step 300/500 (9.3 tok/s, 32.4s elapsed)
+step 400/500 (9.1 tok/s, 43.7s elapsed)
+step 500/500 (9.1 tok/s, 55.1s elapsed)
+inference complete: 500 steps in 55.1s (9.1 tok/s)
+wrote output audio to output_mlx_assistant.wav
+wrote output text to output_mlx_assistant.json
+
+--- Results ---
+Output WAV: output_mlx_assistant.wav (1.92 MB, 40.00s, 24kHz mono)
+Output JSON: output_mlx_assistant.json (500 text tokens)
+Performance: 9.1 tok/s, 55.1s total for 500 steps (~110ms/step)
+Text sample: " Hey, let me know if you have any questions. PAD PAD ..."
+
+--- Bug Fixed ---
+Initial run hit ValueError: reached max-steps 510
+Root cause: max_steps = steps + 10 didn't account for text prompt injection (26 tokens)
+Fix: max_steps = steps + prompt_steps + 20

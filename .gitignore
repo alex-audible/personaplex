@@ -183,3 +183,6 @@ mlx-trace.json
 # Include everything in assets
 !assets/
 !assets/**
+
+# macOS (after assets exception to still exclude .DS_Store in assets/)
+.DS_Store
