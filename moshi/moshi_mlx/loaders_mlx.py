@@ -169,6 +169,68 @@ def get_personaplex_lm(
     return model
 
 
+def get_personaplex_lm_quantized(
+    weights_path: str | Path,
+    quantize_bits: int = 8,
+    group_size: int = 64,
+) -> Lm:
+    """Create a quantized PersonaPlex Lm model.
+
+    On first call, loads the fp16 model, quantizes it, and saves the
+    quantized weights to disk. On subsequent calls, loads the pre-quantized
+    weights directly (fast path).
+
+    Args:
+        weights_path: Path to the fp16 MLX safetensors file.
+        quantize_bits: Quantization bit width (4 or 8).
+        group_size: Quantization group size (default: 64).
+
+    Returns:
+        A quantized Lm model ready for inference.
+    """
+    weights_path = Path(weights_path)
+    if not weights_path.exists():
+        raise FileNotFoundError(
+            f"MLX weights not found at {weights_path}. "
+            f"Run convert_weights.py first to create them."
+        )
+
+    # Derive quantized weights path from fp16 path
+    stem = weights_path.stem  # e.g. "personaplex_mlx"
+    quant_name = f"{stem}_q{quantize_bits}_g{group_size}.safetensors"
+    quant_path = weights_path.parent / quant_name
+
+    cfg = personaplex_config()
+
+    if quant_path.exists():
+        # Fast path: load pre-quantized weights
+        logger.info(
+            "Loading pre-quantized model (%d-bit, group=%d) from %s",
+            quantize_bits, group_size, quant_path,
+        )
+        model = Lm(cfg)
+        nn.quantize(model, group_size=group_size, bits=quantize_bits)
+        model.load_weights(str(quant_path), strict=False)
+        mx.eval(model.parameters())
+        logger.info("Quantized model loaded successfully")
+        return model
+
+    # Slow path: load fp16, quantize, save
+    logger.info(
+        "Quantizing model to %d-bit (group=%d) — this only happens once...",
+        quantize_bits, group_size,
+    )
+    model = get_personaplex_lm(weights_path, dtype=mx.float16)
+    nn.quantize(model, group_size=group_size, bits=quantize_bits)
+    mx.eval(model.parameters())
+
+    logger.info("Saving quantized weights to %s ...", quant_path)
+    model.save_weights(str(quant_path))
+    logger.info("Quantized weights saved (%s)", quant_path)
+
+    return model
+
+
 if __name__ == "__main__":
     import sys
 

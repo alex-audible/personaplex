@@ -69,7 +69,7 @@ import sphn
 from ..moshi.client_utils import colorize
 from ..moshi.utils.connection import create_ssl_context, get_lan_ip
 from ..moshi.utils.logging import setup_logger, ColorizedLog
-from .loaders_mlx import get_personaplex_lm
+from .loaders_mlx import get_personaplex_lm, get_personaplex_lm_quantized
 from .lm_gen_mlx import PersonaPlexLmGen
 from moshi_mlx.utils.sampling import Sampler
 
@@ -644,6 +644,25 @@ def main():
         "--max-steps", type=int, default=3000, help="Maximum autoregressive steps"
     )
 
+    # Quantization
+    parser.add_argument(
+        "--quantize-bits",
+        type=int,
+        choices=[4, 8],
+        default=None,
+        help=(
+            "Quantize model weights to N bits (4 or 8). "
+            "Quantized weights are saved to disk on first run and loaded directly "
+            "on subsequent runs. Default: None (fp16, no quantization)."
+        ),
+    )
+    parser.add_argument(
+        "--quantize-group-size",
+        type=int,
+        default=64,
+        help="Quantization group size. Default: 64.",
+    )
+
     args = parser.parse_args()
 
     # Resolve voice prompt directory
@@ -712,8 +731,16 @@ def main():
             )
             sys.exit(1)
 
-    model = get_personaplex_lm(args.moshi_weight, dtype=mx.float16)
-    logger.info("moshi mlx loaded")
+    if args.quantize_bits is not None:
+        model = get_personaplex_lm_quantized(
+            args.moshi_weight,
+            quantize_bits=args.quantize_bits,
+            group_size=args.quantize_group_size,
+        )
+        logger.info("moshi mlx loaded (%d-bit quantized)", args.quantize_bits)
+    else:
+        model = get_personaplex_lm(args.moshi_weight, dtype=mx.float16)
+        logger.info("moshi mlx loaded (fp16)")
 
     # Create samplers
     text_sampler = Sampler(top_k=args.topk_text, temp=args.temp_text)
