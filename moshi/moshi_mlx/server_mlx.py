@@ -107,11 +107,17 @@ class ServerState:
     """MLX server state holding audio tokenizer, text tokenizer, and LM generator.
 
     This replaces the PyTorch ServerState with MLX equivalents:
-    - mimi: rustymimi.Tokenizer instance
+    - mimi: rustymimi.Tokenizer for encoding user audio
+    - mimi_decoder: rustymimi.Tokenizer for decoding agent audio
     - lm_gen: PersonaPlexLmGen wrapper
     - device: string "mlx" (for logging only, MLX uses unified memory)
+
+    Two separate mimi instances enable pipelining: decode of the previous
+    frame runs concurrently with encode+LM of the current frame in separate
+    threads, overlapping CPU (Rust decode) with CPU+GPU (encode + MLX LM).
     """
     mimi: rustymimi.Tokenizer
+    mimi_decoder: rustymimi.Tokenizer
     text_tokenizer: sentencepiece.SentencePieceProcessor
     lm_gen: PersonaPlexLmGen
     lock: asyncio.Lock
@@ -122,12 +128,14 @@ class ServerState:
     def __init__(
         self,
         mimi: rustymimi.Tokenizer,
+        mimi_decoder: rustymimi.Tokenizer,
         text_tokenizer: sentencepiece.SentencePieceProcessor,
         lm_gen: PersonaPlexLmGen,
         device: str = "mlx",
         voice_prompt_dir: Optional[str] = None,
     ):
         self.mimi = mimi
+        self.mimi_decoder = mimi_decoder
         self.text_tokenizer = text_tokenizer
         self.lm_gen = lm_gen
         self.device = device
@@ -135,8 +143,9 @@ class ServerState:
         self.frame_size = FRAME_SIZE
         self.lock = asyncio.Lock()
 
-        # Initialize streaming mode for the audio tokenizer
+        # Initialize streaming mode for both audio tokenizers
         self.mimi.reset()
+        self.mimi_decoder.reset()
 
     def warmup(self):
         """Run warmup loop to prime MLX compilation and caches.
@@ -171,7 +180,7 @@ class ServerState:
             agent_audio = tokens[:, 1:, :]  # [1, 8, 1]
             agent_audio_np = np.array(agent_audio).astype(np.uint32)
 
-            _ = self.mimi.decode_step(agent_audio_np)
+            _ = self.mimi_decoder.decode_step(agent_audio_np)
 
         # Force evaluation to ensure all ops are compiled
         mx.eval(self.lm_gen.lm_gen.gen_sequence)
@@ -279,16 +288,16 @@ class ServerState:
                 close = True
                 clog.log("info", f"connection closed (received {recv_count} audio packets)")
 
-        def _process_frame(chunk: np.ndarray):
-            """Process one audio frame synchronously (runs in thread).
+        def _encode_and_lm(chunk: np.ndarray):
+            """Encode user audio and run LM step (runs in thread).
 
-            Encodes user audio, runs LM step, decodes agent audio.
-            Returns (tokens_np, main_pcm, lm_ms) or (None, None, 0) if
-            the delay buffer hasn't filled yet.
+            Uses self.mimi (encoder instance) for encode_step and the
+            MLX LM for inference.  Returns (tokens_np, lm_ms) or
+            (None, 0) if the delay buffer hasn't filled yet.
             """
             t0 = time.time()
 
-            # Encode user audio with rustymimi
+            # Encode user audio with rustymimi (CPU, Rust)
             chunk_input = chunk[np.newaxis, np.newaxis, :]
             codes = self.mimi.encode_step(chunk_input)
 
@@ -296,37 +305,53 @@ class ServerState:
             codes_np = np.array(codes)
             codes_mx = mx.array(codes_np).transpose(0, 2, 1)[:, :8, :]
 
-            # LM step
+            # LM step (GPU, MLX Metal)
             tokens = self.lm_gen.step(codes_mx)
             if tokens is None:
-                return None, None, 0.0
+                return None, 0.0
 
             # Force evaluation before numpy conversion
             mx.eval(tokens)
             lm_ms = (time.time() - t0) * 1000
 
-            # Decode agent audio
-            agent_audio = tokens[:, 1:, :]  # [1, 8, 1]
-            agent_audio_np = np.array(agent_audio).astype(np.uint32)
-            main_pcm = self.mimi.decode_step(agent_audio_np)
-
-            # Return numpy tokens for text extraction
+            # Return numpy tokens for text extraction and decode prep
             tokens_np = np.array(tokens)
-            return tokens_np, main_pcm, lm_ms
+            return tokens_np, lm_ms
+
+        def _decode_audio(agent_audio_np: np.ndarray) -> np.ndarray:
+            """Decode agent audio tokens to PCM (runs in thread).
+
+            Uses self.mimi_decoder (separate decoder instance) so this
+            can run concurrently with _encode_and_lm on the encoder.
+            """
+            return self.mimi_decoder.decode_step(agent_audio_np)
 
         async def opus_loop():
-            """Opus processing loop: encode user audio, run LM, decode agent audio.
+            """Pipelined inference loop: overlaps mimi decode with encode+LM.
 
-            The compute-heavy LM step runs in a thread via asyncio.to_thread
-            so the event loop stays responsive for WebSocket I/O (recv_loop
-            and send_loop can run concurrently with inference).
+            Uses two separate mimi instances to pipeline CPU work:
+            - mimi (encoder): encode user audio → feed to LM
+            - mimi_decoder: decode previous frame's agent audio tokens
+
+            Each frame, decode of frame N-1 runs concurrently with
+            encode+LM of frame N via asyncio.to_thread, overlapping
+            ~19ms of CPU decode with ~83ms of encode+GPU inference.
+
+            Expected improvement: 103ms/frame → ~83ms/frame.
             """
             all_pcm_data = None
             frame_count = 0
             t_loop_start = time.time()
+            pending_decode = None  # agent_audio_np from previous frame
 
             while True:
                 if close:
+                    # Flush any remaining pending decode before exiting
+                    if pending_decode is not None:
+                        main_pcm = await asyncio.to_thread(
+                            _decode_audio, pending_decode
+                        )
+                        opus_writer.append_pcm(main_pcm[0, 0])
                     return
                 await asyncio.sleep(0.001)
                 pcm = opus_reader.read_pcm()
@@ -342,25 +367,39 @@ class ServerState:
                     chunk = all_pcm_data[: self.frame_size]
                     all_pcm_data = all_pcm_data[self.frame_size:]
 
-                    # Run encode + LM + decode in thread to unblock event loop
-                    tokens_np, main_pcm, lm_ms = await asyncio.to_thread(
-                        _process_frame, chunk
-                    )
+                    # Pipeline: overlap decode(prev) with encode+LM(current)
+                    if pending_decode is not None:
+                        # Run both concurrently in separate threads:
+                        # - Thread 1: encode chunk + LM step (CPU+GPU, ~83ms)
+                        # - Thread 2: decode prev frame tokens (CPU Rust, ~19ms)
+                        # Safe because they use separate mimi instances.
+                        (tokens_np, lm_ms), main_pcm = await asyncio.gather(
+                            asyncio.to_thread(_encode_and_lm, chunk),
+                            asyncio.to_thread(_decode_audio, pending_decode),
+                        )
+                        # Output previous frame's decoded audio
+                        opus_writer.append_pcm(main_pcm[0, 0])
+                    else:
+                        # No pending decode (first frame or after None tokens)
+                        tokens_np, lm_ms = await asyncio.to_thread(
+                            _encode_and_lm, chunk
+                        )
 
                     if tokens_np is None:
                         frame_count += 1
+                        pending_decode = None
                         continue
 
-                    # Write decoded audio to opus writer (fast, no threading needed)
-                    opus_writer.append_pcm(main_pcm[0, 0])
-
-                    # Extract text token
+                    # Extract text token immediately (no decode needed)
                     text_token = int(tokens_np[0, 0, 0])
                     if text_token not in (0, 3):
                         _text = self.text_tokenizer.id_to_piece(text_token)
                         _text = _text.replace("▁", " ")
                         msg = b"\x02" + bytes(_text, encoding="utf8")
                         await ws.send_bytes(msg)
+
+                    # Defer decode to next iteration (will overlap with next encode+LM)
+                    pending_decode = tokens_np[:, 1:, :].astype(np.uint32)
 
                     frame_count += 1
                     t_frame_end = time.time()
@@ -404,8 +443,9 @@ class ServerState:
             opus_writer = sphn.OpusStreamWriter(SAMPLE_RATE)
             opus_reader = sphn.OpusStreamReader(SAMPLE_RATE)
 
-            # Reset streaming state
+            # Reset streaming state for both encoder and decoder
             self.mimi.reset()
+            self.mimi_decoder.reset()
 
             # Reset LM generator
             # For PersonaPlexLmGen, we need to reset the inner LmGen caches
@@ -649,6 +689,7 @@ def main():
     if args.mimi_weight is None:
         args.mimi_weight = hf_hub_download(args.hf_repo, MIMI_NAME)
     mimi = rustymimi.Tokenizer(args.mimi_weight, num_codebooks=8)
+    mimi_decoder = rustymimi.Tokenizer(args.mimi_weight, num_codebooks=8)
     logger.info("mimi loaded")
 
     # Load text tokenizer
@@ -690,6 +731,7 @@ def main():
     # Create server state
     state = ServerState(
         mimi=mimi,
+        mimi_decoder=mimi_decoder,
         text_tokenizer=text_tokenizer,
         lm_gen=lm_gen,
         device="mlx",
