@@ -1,0 +1,47 @@
+2026-01-28 11:12:23,565 INFO moshi_mlx.loaders_mlx: Creating PersonaPlex MLX model (num_slices=8) ...
+2026-01-28 11:12:23,570 INFO moshi_mlx.loaders_mlx: Loading MLX weights from personaplex_mlx.safetensors ...
+2026-01-28 11:12:23,571 INFO moshi_mlx.loaders_mlx: Loaded 523 weight tensors
+2026-01-28 11:12:24,182 INFO moshi_mlx.loaders_mlx: PersonaPlex MLX model loaded successfully
+2026-01-28 11:12:25,723 INFO moshi_mlx.lm_gen_mlx: PersonaPlexLmGen created: dep_q=8, other_q=8, max_steps=609
+2026-01-28 11:12:26,368 INFO moshi_mlx.lm_gen_mlx: PersonaPlexLmGen created: dep_q=8, other_q=8, max_steps=609
+2026-01-28 11:12:26,369 INFO moshi_mlx.lm_gen_mlx: Loading voice prompt embeddings from: /Users/220611g/.cache/huggingface/hub/models--nvidia--personaplex-7b-v1/snapshots/f69e74f60b25bded21b08fd932c334e47e28f184/voices/NATF2.pt
+2026-01-28 11:12:26,370 INFO moshi_mlx.lm_gen_mlx: Voice prompt embeddings: shape=(51, 1, 1, 4096)
+2026-01-28 11:12:26,370 INFO moshi_mlx.lm_gen_mlx: Voice prompt cache: shape=(1, 17, 4)
+2026-01-28 11:12:26,370 INFO moshi_mlx.lm_gen_mlx: System prompt phase 1: voice prompt (embeddings)
+2026-01-28 11:12:26,370 INFO moshi_mlx.lm_gen_mlx: Replaying 51 voice prompt embeddings through transformer
+2026-01-28 11:12:29,365 INFO moshi_mlx.lm_gen_mlx: Restoring voice prompt cache: CT=4, step_idx=51
+2026-01-28 11:12:29,365 INFO moshi_mlx.lm_gen_mlx: Voice prompt embeddings replay complete. step_idx=51
+2026-01-28 11:12:29,365 INFO moshi_mlx.lm_gen_mlx: System prompt phase 2: audio silence (6 frames)
+2026-01-28 11:12:29,748 INFO moshi_mlx.lm_gen_mlx: System prompt phase 3: text prompt (26 tokens)
+2026-01-28 11:12:31,418 INFO moshi_mlx.lm_gen_mlx: System prompt phase 4: audio silence (6 frames)
+2026-01-28 11:12:31,809 INFO moshi_mlx.lm_gen_mlx: System prompts complete. step_idx=89
+[INFO] seeded all RNGs with 42424242
+[INFO] loading PersonaPlex MLX model from personaplex_mlx.safetensors
+[INFO] model loaded
+[INFO] downloading Mimi weights from nvidia/personaplex-7b-v1
+[INFO] loading audio tokenizer from /Users/220611g/.cache/huggingface/hub/models--nvidia--personaplex-7b-v1/snapshots/f69e74f60b25bded21b08fd932c334e47e28f184/tokenizer-e351c8d8-checkpoint125.safetensors
+[INFO] audio tokenizer loaded
+[INFO] downloading text tokenizer from nvidia/personaplex-7b-v1
+[INFO] loading text tokenizer from /Users/220611g/.cache/huggingface/hub/models--nvidia--personaplex-7b-v1/snapshots/f69e74f60b25bded21b08fd932c334e47e28f184/tokenizer_spm_32k_3.model
+[INFO] text tokenizer loaded
+[INFO] loading input audio from assets/test/input_assistant.wav
+[INFO] input audio: 960000 samples, 500 frames (40.00s)
+[INFO] Found voices in HF cache: /Users/220611g/.cache/huggingface/hub/models--nvidia--personaplex-7b-v1/snapshots/f69e74f60b25bded21b08fd932c334e47e28f184/voices
+[INFO] resolved voice prompt: /Users/220611g/.cache/huggingface/hub/models--nvidia--personaplex-7b-v1/snapshots/f69e74f60b25bded21b08fd932c334e47e28f184/voices/NATF2.pt
+[INFO] voice prompt: 51 frames (4.08s)
+[INFO] using greedy decoding (temp=0)
+[INFO] max_steps=609 (inference=500, prompt_overhead=89, margin=20)
+[INFO] warming up the model
+[INFO] warmup complete
+[INFO] text prompt: 26 tokens
+[INFO] running system prompt pipeline
+[INFO] system prompts complete at step_idx=89
+[INFO] running inference: 500 steps
+[INFO] step 100/500 (9.7 tok/s, 10.3s elapsed)
+[INFO] step 200/500 (9.7 tok/s, 20.7s elapsed)
+[INFO] step 300/500 (9.6 tok/s, 31.2s elapsed)
+[INFO] step 400/500 (9.5 tok/s, 41.9s elapsed)
+[INFO] step 500/500 (9.5 tok/s, 52.6s elapsed)
+[INFO] inference complete: 500 steps in 52.6s (9.5 tok/s)
+[INFO] wrote output audio to assets/test/results/stage3/output_mlx_assistant_voiced.wav
+[INFO] wrote output text to assets/test/results/stage3/output_mlx_assistant_voiced.json

@@ -38,15 +38,16 @@ High-level flow:
   3. Load sentencepiece tokenizer for text
   4. Create PersonaPlexLmGen with the right samplers
   5. Warmup the model
-  6. (Optional) Voice prompt injection (stub for Stage 3)
-  7. Read input WAV via sphn
-  8. For each frame of user audio:
+  6. (Optional) Load voice prompt (.pt embeddings or .wav audio)
+  7. Run system prompt pipeline (voice -> silence -> text -> silence)
+  8. Read input WAV via sphn
+  9. For each frame of user audio:
      a. Encode user audio with rustymimi.encode_step()
      b. Feed to PersonaPlexLmGen.step()
      c. If tokens returned, decode agent audio with rustymimi.decode_step()
      d. Collect PCM frames
-  9. Concatenate frames, write output WAV via rustymimi.write_wav()
- 10. Write text tokens to JSON
+ 10. Concatenate frames, write output WAV via rustymimi.write_wav()
+ 11. Write text tokens to JSON
 
 Usage::
 
@@ -55,6 +56,7 @@ Usage::
         --output-wav /tmp/claude/output_mlx.wav \\
         --output-text /tmp/claude/output_mlx.json \\
         --weights personaplex_mlx.safetensors \\
+        --voice-prompt NATF2.pt \\
         --greedy --seed 42424242
 """
 
@@ -63,6 +65,8 @@ from __future__ import annotations
 import argparse
 import json
 import logging
+import os
+import tarfile
 import time
 from pathlib import Path
 from typing import List, Optional
@@ -75,7 +79,7 @@ import sphn
 from huggingface_hub import hf_hub_download
 
 from moshi_mlx.loaders_mlx import get_personaplex_lm
-from moshi_mlx.lm_gen_mlx import PersonaPlexLmGen
+from moshi_mlx.lm_gen_mlx import PersonaPlexLmGen, AUDIO_SILENCE_FRAME_CNT
 from moshi_mlx.perf_logger import PerfLogger
 from moshi_mlx.utils.sampling import Sampler
 
@@ -91,6 +95,7 @@ FRAME_SIZE = int(SAMPLE_RATE / FRAME_RATE)  # 1920 samples per frame
 DEFAULT_HF_REPO = "nvidia/personaplex-7b-v1"
 MIMI_NAME = "tokenizer-e351c8d8-checkpoint125.safetensors"
 TEXT_TOKENIZER_NAME = "tokenizer_spm_32k_3.model"
+VOICES_TGZ_NAME = "voices.tgz"
 
 # Codebook counts
 NUM_GENERATED_CODEBOOKS = 8  # agent audio (depformer)
@@ -125,6 +130,84 @@ def _wrap_system_tags(text: str) -> str:
     if cleaned.startswith("<system>") and cleaned.endswith("<system>"):
         return cleaned
     return f"<system> {cleaned} <system>"
+
+
+def _get_voice_prompt_dir(hf_repo: str = DEFAULT_HF_REPO) -> str:
+    """Download and extract voice prompts from HuggingFace if needed.
+
+    Downloads ``voices.tgz`` from the HF repo and extracts the ``voices/``
+    directory.  Returns the path to the extracted ``voices/`` directory.
+
+    If the voices are already available in the HF cache (e.g. from a
+    previous download of the full model snapshot), returns that path
+    instead.
+    """
+    # Check if voices directory exists in the HF cache snapshot
+    try:
+        from huggingface_hub import snapshot_download
+        cache_dir = snapshot_download(
+            hf_repo,
+            allow_patterns=["voices/*"],
+            local_files_only=True,
+        )
+        voices_dir = os.path.join(cache_dir, "voices")
+        if os.path.isdir(voices_dir) and any(
+            f.endswith(".pt") for f in os.listdir(voices_dir)
+        ):
+            _log("info", f"Found voices in HF cache: {voices_dir}")
+            return voices_dir
+    except Exception:
+        pass
+
+    # Download voices.tgz and extract
+    _log("info", f"Downloading {VOICES_TGZ_NAME} from {hf_repo}")
+    tgz_path = hf_hub_download(hf_repo, VOICES_TGZ_NAME)
+    extract_dir = os.path.dirname(tgz_path)
+    voices_dir = os.path.join(extract_dir, "voices")
+
+    if not os.path.isdir(voices_dir):
+        _log("info", f"Extracting {tgz_path} to {extract_dir}")
+        with tarfile.open(tgz_path, "r:gz") as tar:
+            tar.extractall(path=extract_dir)
+
+    return voices_dir
+
+
+def _resolve_voice_prompt_path(
+    voice_prompt: str,
+    voice_prompt_dir: Optional[str] = None,
+    hf_repo: str = DEFAULT_HF_REPO,
+) -> str:
+    """Resolve a voice prompt argument to an absolute file path.
+
+    If ``voice_prompt`` is already an absolute path or relative path that
+    exists, return it directly.  Otherwise, treat it as a filename and
+    look it up in ``voice_prompt_dir`` (downloading if needed).
+
+    Args:
+        voice_prompt: Voice prompt filename (e.g. ``NATF2.pt``) or path.
+        voice_prompt_dir: Directory containing voice prompt files.
+        hf_repo: HF repo for downloading voices if dir not specified.
+
+    Returns:
+        Absolute path to the voice prompt file.
+    """
+    # If it's already a path that exists, use it directly
+    if os.path.isfile(voice_prompt):
+        return os.path.abspath(voice_prompt)
+
+    # Try resolving relative to voice_prompt_dir
+    if voice_prompt_dir is None:
+        voice_prompt_dir = _get_voice_prompt_dir(hf_repo)
+
+    candidate = os.path.join(voice_prompt_dir, voice_prompt)
+    if os.path.isfile(candidate):
+        return os.path.abspath(candidate)
+
+    raise FileNotFoundError(
+        f"Voice prompt not found: {voice_prompt} "
+        f"(searched in: {voice_prompt_dir})"
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -171,6 +254,8 @@ def run_inference(
     tokenizer_path: Optional[str] = None,
     hf_repo: str = DEFAULT_HF_REPO,
     text_prompt: str = "",
+    voice_prompt: Optional[str] = None,
+    voice_prompt_dir: Optional[str] = None,
     seed: Optional[int] = None,
     temp_audio: float = 0.8,
     temp_text: float = 0.7,
@@ -190,6 +275,8 @@ def run_inference(
         tokenizer_path: Path to sentencepiece text tokenizer. If None, downloaded.
         hf_repo: HuggingFace repository for asset downloads.
         text_prompt: System text prompt for the model.
+        voice_prompt: Voice prompt filename or path (.pt or .wav).
+        voice_prompt_dir: Directory containing voice prompt files.
         seed: Random seed for reproducibility. None or -1 disables.
         temp_audio: Audio sampling temperature.
         temp_text: Text sampling temperature.
@@ -240,7 +327,38 @@ def run_inference(
          f"({total_samples / SAMPLE_RATE:.2f}s)")
 
     # ----------------------------------------------------------------
-    # 5) Create samplers and PersonaPlexLmGen
+    # 5) Resolve voice prompt path (if specified)
+    # ----------------------------------------------------------------
+    voice_prompt_path: Optional[str] = None
+    voice_prompt_frames = 0
+    if voice_prompt:
+        voice_prompt_path = _resolve_voice_prompt_path(
+            voice_prompt, voice_prompt_dir, hf_repo
+        )
+        _log("info", f"resolved voice prompt: {voice_prompt_path}")
+
+        # Estimate the number of frames for max_steps calculation
+        if voice_prompt_path.endswith(".pt"):
+            import torch
+            _state = torch.load(
+                voice_prompt_path, map_location="cpu", weights_only=False
+            )
+            voice_prompt_frames = _state["embeddings"].shape[0]
+            del _state
+        else:
+            # WAV: estimate frames from file duration
+            _vp_audio, _ = sphn.read(voice_prompt_path, sample_rate=SAMPLE_RATE)
+            voice_prompt_frames = _vp_audio.shape[-1] // FRAME_SIZE
+            del _vp_audio
+
+        _log(
+            "info",
+            f"voice prompt: {voice_prompt_frames} frames "
+            f"({voice_prompt_frames / FRAME_RATE:.2f}s)",
+        )
+
+    # ----------------------------------------------------------------
+    # 6) Create samplers and PersonaPlexLmGen
     # ----------------------------------------------------------------
     if greedy:
         text_sampler = Sampler(temp=0.0)
@@ -253,14 +371,24 @@ def run_inference(
              f"audio temp={temp_audio} top_k={topk_audio}")
 
     # Estimate text prompt length for max_steps calculation
-    prompt_steps = 0
+    prompt_token_count = 0
     if text_prompt:
         tagged = _wrap_system_tags(text_prompt)
-        prompt_steps = len(text_tokenizer.encode(tagged))
+        prompt_token_count = len(text_tokenizer.encode(tagged))
 
-    # Add extra steps for text prompt injection, delay compensation,
+    # Total prompt steps: voice frames + 2*silence(6) + text tokens
+    prompt_overhead = (
+        voice_prompt_frames
+        + 2 * AUDIO_SILENCE_FRAME_CNT
+        + prompt_token_count
+    )
+
+    # Add extra steps for prompt injection, delay compensation,
     # and safety margin
-    max_steps = steps + prompt_steps + 20
+    max_steps = steps + prompt_overhead + 20
+    _log("info", f"max_steps={max_steps} (inference={steps}, "
+         f"prompt_overhead={prompt_overhead}, margin=20)")
+
     gen = PersonaPlexLmGen(
         model=model,
         max_steps=max_steps,
@@ -270,7 +398,7 @@ def run_inference(
     )
 
     # ----------------------------------------------------------------
-    # 6) Warmup
+    # 7) Warmup
     # ----------------------------------------------------------------
     warmup(gen, audio_tokenizer, num_steps=4)
 
@@ -289,19 +417,45 @@ def run_inference(
     for c in model.depformer_cache:
         c.reset()
 
+    # Reset audio tokenizer streaming state after warmup
+    audio_tokenizer.reset()
+
     # ----------------------------------------------------------------
-    # 7) Text prompt injection (optional)
+    # 8) Load voice prompt and run system prompt pipeline
     # ----------------------------------------------------------------
+    if voice_prompt_path:
+        if voice_prompt_path.endswith(".pt"):
+            gen.load_voice_prompt_embeddings(voice_prompt_path)
+        else:
+            gen.load_voice_prompt(voice_prompt_path)
+
+    # Prepare text prompt tokens
+    prompt_ids: Optional[list[int]] = None
     if text_prompt:
         tagged = _wrap_system_tags(text_prompt)
         prompt_ids = text_tokenizer.encode(tagged)
-        _log("info", f"injecting text prompt: {len(prompt_ids)} tokens")
-        gen.step_text_prompt(prompt_ids)
-        mx.eval(gen.lm_gen.gen_sequence)
-        _log("info", "text prompt injection complete")
+        _log("info", f"text prompt: {len(prompt_ids)} tokens")
+
+    # Run the full system prompt pipeline
+    # (voice -> silence -> text -> silence)
+    has_voice = voice_prompt_path is not None
+    has_text = prompt_ids is not None and len(prompt_ids) > 0
+
+    if has_voice or has_text:
+        _log("info", "running system prompt pipeline")
+        gen.step_system_prompts(
+            audio_tokenizer=audio_tokenizer,
+            text_token_ids=prompt_ids,
+        )
+        _log("info", f"system prompts complete at step_idx={gen.step_idx}")
+    else:
+        _log("info", "no prompts to inject")
+
+    # Reset audio tokenizer streaming state for inference
+    audio_tokenizer.reset()
 
     # ----------------------------------------------------------------
-    # 8) Run inference frame-by-frame
+    # 9) Run inference frame-by-frame
     # ----------------------------------------------------------------
     generated_frames: List[np.ndarray] = []
     generated_text_tokens: List[str] = []
@@ -313,12 +467,12 @@ def run_inference(
         if perf_logger:
             perf_logger.frame_start()
 
-        # 8a. Slice one frame of user PCM
+        # 9a. Slice one frame of user PCM
         pcm_data = in_pcms[:, idx * FRAME_SIZE : (idx + 1) * FRAME_SIZE]
         # pcm_data: [channels, FRAME_SIZE] -> need [1, 1, FRAME_SIZE]
         pcm_input = pcm_data[0:1][np.newaxis, :, :]  # [1, 1, FRAME_SIZE]
 
-        # 8b. Encode with rustymimi
+        # 9b. Encode with rustymimi
         codes = audio_tokenizer.encode_step(pcm_input)
         # codes: [1, 1, num_codebooks] -> transpose to [1, num_codebooks, 1]
         codes_mx = mx.array(codes).transpose(0, 2, 1)[:, :NUM_OTHER_CODEBOOKS, :]
@@ -327,7 +481,7 @@ def run_inference(
             mx.eval(codes_mx)
             perf_logger.mark("mimi_encode")
 
-        # 8c. Feed to PersonaPlexLmGen
+        # 9c. Feed to PersonaPlexLmGen
         tokens = gen.step(codes_mx)
 
         if perf_logger and tokens is not None:
@@ -340,7 +494,7 @@ def run_inference(
                 perf_logger.frame_end(missed=False)
             continue
 
-        # 8d. Decode agent audio with rustymimi
+        # 9d. Decode agent audio with rustymimi
         # tokens: [B, dep_q+1, 1] -> agent audio is tokens[:, 1:, :]
         text_token_val = tokens[0, 0, 0].item()
         agent_audio = tokens[:, 1:, :]  # [1, dep_q, 1]
@@ -354,7 +508,7 @@ def run_inference(
         # out_pcm: [1, 1, FRAME_SIZE]
         generated_frames.append(out_pcm[0, 0])
 
-        # 8e. Decode text token
+        # 9e. Decode text token
         if text_token_val not in (0, 3):
             try:
                 _text = text_tokenizer.id_to_piece(int(text_token_val))
@@ -382,10 +536,10 @@ def run_inference(
          f"({steps / elapsed:.1f} tok/s)")
 
     # ----------------------------------------------------------------
-    # 9) Write output WAV
+    # 10) Write output WAV
     # ----------------------------------------------------------------
     if len(generated_frames) == 0:
-        _log("error", "no audio frames generated — check input file and config")
+        _log("error", "no audio frames generated -- check input file and config")
         return
 
     output_pcm = np.concatenate(generated_frames, axis=-1)
@@ -405,7 +559,7 @@ def run_inference(
     _log("info", f"wrote output audio to {output_wav}")
 
     # ----------------------------------------------------------------
-    # 10) Write text tokens to JSON
+    # 11) Write text tokens to JSON
     # ----------------------------------------------------------------
     Path(output_text).parent.mkdir(parents=True, exist_ok=True)
     with open(output_text, "w") as f:
@@ -459,6 +613,16 @@ def main() -> None:
         default="You are a wise and friendly teacher. Answer questions or "
                 "provide advice in a clear and engaging way.",
         help="System text prompt for the model.",
+    )
+    parser.add_argument(
+        "--voice-prompt", type=str, default=None,
+        help="Voice prompt filename (e.g. NATF2.pt) or path. "
+             "Supports .pt (pre-computed embeddings) and .wav files.",
+    )
+    parser.add_argument(
+        "--voice-prompt-dir", type=str, default=None,
+        help="Directory containing voice prompt files. "
+             "Downloaded from HF if omitted.",
     )
 
     # Sampling
@@ -519,6 +683,8 @@ def main() -> None:
         tokenizer_path=args.tokenizer,
         hf_repo=args.hf_repo,
         text_prompt=args.text_prompt,
+        voice_prompt=args.voice_prompt,
+        voice_prompt_dir=args.voice_prompt_dir,
         seed=args.seed if args.seed != -1 else None,
         temp_audio=args.temp_audio,
         temp_text=args.temp_text,
