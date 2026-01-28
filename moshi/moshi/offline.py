@@ -44,7 +44,10 @@ import os
 import tarfile
 from pathlib import Path
 import json
-from typing import Optional, List
+from typing import Optional, List, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from moshi_mlx.perf_logger import PerfLogger
 
 import numpy as np
 import torch
@@ -169,6 +172,7 @@ def run_inference(
     greedy: bool,
     save_voice_prompt_embeddings: bool,
     cpu_offload: bool = False,
+    perf_logger: Optional["PerfLogger"] = None,
 ):
     """Run offline inference using an input WAV as the user-side stream.
 
@@ -178,6 +182,12 @@ def run_inference(
     - Runs prompt phases (text + voice + silences) via LMGen.step_system_prompts
     - Streams the user WAV frames into the input channels and samples model outputs
     - Decodes and writes an output WAV of the same duration
+
+    Args:
+        perf_logger: Optional PerfLogger instance for per-frame timing
+            instrumentation. When provided, each inference step is timed
+            with GPU-synced marks for mimi_encode, lm_forward, mimi_decode,
+            and total frame time.
     """
     if seed is not None and seed != -1:
         seed_all(seed)
@@ -274,13 +284,37 @@ def run_inference(
         # user_encoded: [1, K, T]. Feed one step at a time (usually T==1)
         steps = user_encoded.shape[-1]
         for c in range(steps):
+            if perf_logger:
+                perf_logger.frame_start()
+
             step_in = user_encoded[:, :, c : c + 1]
+
+            # Note: mimi_encode already happened in the generator above.
+            # We mark the boundary so downstream analysis has a slot for it,
+            # even though the encode cost is amortised into the generator.
+            if perf_logger:
+                perf_logger.sync()
+                perf_logger.mark("mimi_encode")
+
             # Feed user-side input channels; text + agent audio are sampled
             tokens = lm_gen.step(step_in)
+
+            if perf_logger:
+                perf_logger.sync()
+                perf_logger.mark("lm_forward")
+
             if tokens is None:
+                if perf_logger:
+                    perf_logger.frame_end(missed=False)
                 continue
+
             # Decode current sampled agent frame to PCM
             pcm = decode_tokens_to_pcm(mimi, other_mimi, lm_gen, tokens)
+
+            if perf_logger:
+                perf_logger.sync()
+                perf_logger.mark("mimi_decode")
+
             generated_frames.append(pcm)
             # Decode text token
             text_token = tokens[0, 0, 0].item()
@@ -293,6 +327,9 @@ def run_inference(
                 text_token_map = ['EPAD', 'BOS', 'EOS', 'PAD']
                 log("info", f"text token '{text_token_map[text_token]}'")
                 generated_text_tokens.append(text_token_map[text_token])
+
+            if perf_logger:
+                perf_logger.frame_end()
 
     if len(generated_frames) == 0:
         log("error", "No audio frames were generated. Check input file and configuration.")
@@ -381,6 +418,10 @@ def main():
                         help="Offload LM model layers to CPU when GPU memory is insufficient. "
                              "Requires 'accelerate' package.")
     parser.add_argument("--seed", type=int, default=-1, help="Seed for reproducibility (-1 disables)")
+    parser.add_argument(
+        "--perf-output", type=str, default=None,
+        help="Path to write performance profiling JSON. Enables per-frame timing instrumentation."
+    )
 
     args = parser.parse_args()
 
@@ -404,6 +445,16 @@ def main():
     # Normalize greedy flag behavior (True if present, False otherwise)
     greedy = bool(args.greedy)
 
+    # Optional performance logging
+    perf_logger = None
+    if args.perf_output:
+        from moshi_mlx.perf_logger import PerfLogger
+        perf_logger = PerfLogger(
+            enabled=True,
+            backend=args.device,
+            device_name=None,  # auto-detect
+        )
+
     with torch.no_grad():
         run_inference(
             input_wav=args.input_wav,
@@ -424,7 +475,12 @@ def main():
             greedy=greedy,
             save_voice_prompt_embeddings=False,
             cpu_offload=args.cpu_offload,
+            perf_logger=perf_logger,
         )
+
+    if perf_logger:
+        perf_logger.export_json(args.perf_output)
+        log("info", f"Performance data written to {args.perf_output}")
 
 
 if __name__ == "__main__":

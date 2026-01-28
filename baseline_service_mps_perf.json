@@ -1,0 +1,3771 @@
+{
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_unix": 1769565784.025068,
+      "timings_ms": {
+        "mimi_encode": 0.013124998076818883,
+        "lm_forward": 278.2433749962365,
+        "mimi_decode": 42.66975000791717,
+        "total": 321.1192089947872
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18276.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 1,
+      "timestamp_unix": 1769565784.3691049,
+      "timings_ms": {
+        "mimi_encode": 0.023375003365799785,
+        "lm_forward": 264.8628749884665,
+        "mimi_decode": 43.46533300122246,
+        "total": 308.5670830041636
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 2,
+      "timestamp_unix": 1769565784.701538,
+      "timings_ms": {
+        "mimi_encode": 0.015125013305805624,
+        "lm_forward": 266.4579579868587,
+        "mimi_decode": 45.12195900315419,
+        "total": 311.89500000618864
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18282.0,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 3,
+      "timestamp_unix": 1769565785.039074,
+      "timings_ms": {
+        "mimi_encode": 0.03845899482257664,
+        "lm_forward": 262.4436660116771,
+        "mimi_decode": 43.48774999380112,
+        "total": 306.18112499359995
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.8,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 4,
+      "timestamp_unix": 1769565785.370124,
+      "timings_ms": {
+        "mimi_encode": 0.015583005733788013,
+        "lm_forward": 262.6933339925017,
+        "mimi_decode": 42.229791011777706,
+        "total": 305.1196250016801
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_unix": 1769565785.698543,
+      "timings_ms": {
+        "mimi_encode": 0.015083001926541328,
+        "lm_forward": 262.13187498797197,
+        "mimi_decode": 42.57891701126937,
+        "total": 305.01499999081716
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18282.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 6,
+      "timestamp_unix": 1769565786.029639,
+      "timings_ms": {
+        "mimi_encode": 0.01462499494664371,
+        "lm_forward": 268.44762499968056,
+        "mimi_decode": 42.02975000953302,
+        "total": 310.70608299341984
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 7,
+      "timestamp_unix": 1769565786.363134,
+      "timings_ms": {
+        "mimi_encode": 0.011500000255182385,
+        "lm_forward": 262.9639170045266,
+        "mimi_decode": 43.363374992622994,
+        "total": 306.54466699343175
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 8,
+      "timestamp_unix": 1769565786.694548,
+      "timings_ms": {
+        "mimi_encode": 0.012624994269572198,
+        "lm_forward": 264.4258750078734,
+        "mimi_decode": 42.12941699370276,
+        "total": 306.78887499379925
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 9,
+      "timestamp_unix": 1769565787.025339,
+      "timings_ms": {
+        "mimi_encode": 0.011500000255182385,
+        "lm_forward": 263.61299998825416,
+        "mimi_decode": 45.937957998830825,
+        "total": 309.8168329888722
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 10,
+      "timestamp_unix": 1769565787.358752,
+      "timings_ms": {
+        "mimi_encode": 0.03599999763537198,
+        "lm_forward": 274.26141599426046,
+        "mimi_decode": 44.991750008193776,
+        "total": 319.55108299735
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.2,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 11,
+      "timestamp_unix": 1769565787.703465,
+      "timings_ms": {
+        "mimi_encode": 0.010124989785254002,
+        "lm_forward": 263.78850000037346,
+        "mimi_decode": 44.21720800746698,
+        "total": 308.21433299570344
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 12,
+      "timestamp_unix": 1769565788.0376918,
+      "timings_ms": {
+        "mimi_encode": 0.019083003280684352,
+        "lm_forward": 263.4630829998059,
+        "mimi_decode": 42.73370899318252,
+        "total": 306.4685410063248
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 13,
+      "timestamp_unix": 1769565788.369011,
+      "timings_ms": {
+        "mimi_encode": 0.02158300776500255,
+        "lm_forward": 255.53116700029932,
+        "mimi_decode": 42.465332997380756,
+        "total": 298.2215410011122
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 14,
+      "timestamp_unix": 1769565788.69152,
+      "timings_ms": {
+        "mimi_encode": 0.012415999663062394,
+        "lm_forward": 258.8912089995574,
+        "mimi_decode": 46.20416600664612,
+        "total": 305.3092500049388
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 15,
+      "timestamp_unix": 1769565789.0208871,
+      "timings_ms": {
+        "mimi_encode": 0.021957996068522334,
+        "lm_forward": 272.7626670093741,
+        "mimi_decode": 46.13283299840987,
+        "total": 319.1480829991633
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 16,
+      "timestamp_unix": 1769565789.364743,
+      "timings_ms": {
+        "mimi_encode": 0.02791700535453856,
+        "lm_forward": 260.41487499605864,
+        "mimi_decode": 43.897208000998944,
+        "total": 304.55912499746773
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.4,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 17,
+      "timestamp_unix": 1769565789.692938,
+      "timings_ms": {
+        "mimi_encode": 0.024916997062973678,
+        "lm_forward": 261.0639170015929,
+        "mimi_decode": 43.57937499298714,
+        "total": 304.8678339982871
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 18,
+      "timestamp_unix": 1769565790.022251,
+      "timings_ms": {
+        "mimi_encode": 0.021083003957755864,
+        "lm_forward": 272.354250002536,
+        "mimi_decode": 43.68249999242835,
+        "total": 316.3202919968171
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 19,
+      "timestamp_unix": 1769565790.363343,
+      "timings_ms": {
+        "mimi_encode": 0.016874997527338564,
+        "lm_forward": 269.01275001000613,
+        "mimi_decode": 40.600457999971695,
+        "total": 309.9370830022963
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 20,
+      "timestamp_unix": 1769565790.6995368,
+      "timings_ms": {
+        "mimi_encode": 0.012165997759439051,
+        "lm_forward": 270.0138750078622,
+        "mimi_decode": 52.397374995052814,
+        "total": 322.62704099412076
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18282.2,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 21,
+      "timestamp_unix": 1769565791.046031,
+      "timings_ms": {
+        "mimi_encode": 0.043791995267383754,
+        "lm_forward": 269.51204099168535,
+        "mimi_decode": 44.60091701184865,
+        "total": 314.37174999155104
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 22,
+      "timestamp_unix": 1769565791.3846521,
+      "timings_ms": {
+        "mimi_encode": 0.04483399970922619,
+        "lm_forward": 270.98241599742323,
+        "mimi_decode": 46.28854199836496,
+        "total": 317.51729200186674
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 23,
+      "timestamp_unix": 1769565791.726482,
+      "timings_ms": {
+        "mimi_encode": 0.01779200101736933,
+        "lm_forward": 260.4762079863576,
+        "mimi_decode": 42.60337501182221,
+        "total": 303.3106249931734
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.0,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 24,
+      "timestamp_unix": 1769565792.056957,
+      "timings_ms": {
+        "mimi_encode": 0.019167011487297714,
+        "lm_forward": 277.01979099947494,
+        "mimi_decode": 43.069291990832426,
+        "total": 320.31450000067707
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 25,
+      "timestamp_unix": 1769565792.402426,
+      "timings_ms": {
+        "mimi_encode": 0.0202919909497723,
+        "lm_forward": 270.9571660088841,
+        "mimi_decode": 43.32583399082068,
+        "total": 314.5178749982733
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 26,
+      "timestamp_unix": 1769565792.742836,
+      "timings_ms": {
+        "mimi_encode": 0.01420799526385963,
+        "lm_forward": 263.4619169984944,
+        "mimi_decode": 42.423541002790444,
+        "total": 306.15399999078363
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 27,
+      "timestamp_unix": 1769565793.074487,
+      "timings_ms": {
+        "mimi_encode": 0.013165990822017193,
+        "lm_forward": 270.5250419967342,
+        "mimi_decode": 42.43750000023283,
+        "total": 313.1771249900339
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 28,
+      "timestamp_unix": 1769565793.412544,
+      "timings_ms": {
+        "mimi_encode": 0.018582999473437667,
+        "lm_forward": 276.68470799108036,
+        "mimi_decode": 47.153709005215205,
+        "total": 324.04737499018665
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.2,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 29,
+      "timestamp_unix": 1769565793.762429,
+      "timings_ms": {
+        "mimi_encode": 0.00983300560619682,
+        "lm_forward": 277.7510000014445,
+        "mimi_decode": 45.354041998507455,
+        "total": 323.30420799553394
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 30,
+      "timestamp_unix": 1769565794.111722,
+      "timings_ms": {
+        "mimi_encode": 0.011833006283268332,
+        "lm_forward": 263.92258299165405,
+        "mimi_decode": 42.786542006069794,
+        "total": 306.9355000043288
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 31,
+      "timestamp_unix": 1769565794.442633,
+      "timings_ms": {
+        "mimi_encode": 0.03470800584182143,
+        "lm_forward": 273.63262500148267,
+        "mimi_decode": 46.16991699731443,
+        "total": 320.04137500189245
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 32,
+      "timestamp_unix": 1769565794.787935,
+      "timings_ms": {
+        "mimi_encode": 0.014999997802078724,
+        "lm_forward": 267.9815419978695,
+        "mimi_decode": 43.348207997041754,
+        "total": 311.5414170024451
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.0,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 33,
+      "timestamp_unix": 1769565795.1246479,
+      "timings_ms": {
+        "mimi_encode": 0.009750001481734216,
+        "lm_forward": 260.1410829956876,
+        "mimi_decode": 45.13070899702143,
+        "total": 305.5153750028694
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 34,
+      "timestamp_unix": 1769565795.4552839,
+      "timings_ms": {
+        "mimi_encode": 0.01824999344535172,
+        "lm_forward": 261.0602079948876,
+        "mimi_decode": 42.86604200024158,
+        "total": 304.1817909979727
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 35,
+      "timestamp_unix": 1769565795.7840471,
+      "timings_ms": {
+        "mimi_encode": 0.017874990589916706,
+        "lm_forward": 266.2822080019396,
+        "mimi_decode": 42.72220900747925,
+        "total": 309.3029169976944
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 36,
+      "timestamp_unix": 1769565796.120449,
+      "timings_ms": {
+        "mimi_encode": 0.013500000932253897,
+        "lm_forward": 266.67349999479484,
+        "mimi_decode": 46.00133400526829,
+        "total": 312.9560420056805
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 37,
+      "timestamp_unix": 1769565796.458664,
+      "timings_ms": {
+        "mimi_encode": 0.01104098919313401,
+        "lm_forward": 264.426875000936,
+        "mimi_decode": 43.34400000516325,
+        "total": 307.9929999948945
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 38,
+      "timestamp_unix": 1769565796.790145,
+      "timings_ms": {
+        "mimi_encode": 0.013665994629263878,
+        "lm_forward": 261.15612500871066,
+        "mimi_decode": 45.186874995124526,
+        "total": 306.5691660012817
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 39,
+      "timestamp_unix": 1769565797.121872,
+      "timings_ms": {
+        "mimi_encode": 0.01750000228639692,
+        "lm_forward": 266.5331669995794,
+        "mimi_decode": 40.749040999799035,
+        "total": 307.57154199818615
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 40,
+      "timestamp_unix": 1769565797.455904,
+      "timings_ms": {
+        "mimi_encode": 0.020083010895177722,
+        "lm_forward": 268.63645800040103,
+        "mimi_decode": 42.466458995477296,
+        "total": 311.31383300817106
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 41,
+      "timestamp_unix": 1769565797.793033,
+      "timings_ms": {
+        "mimi_encode": 0.01608299498911947,
+        "lm_forward": 272.1282499987865,
+        "mimi_decode": 42.309083000873215,
+        "total": 314.6964999905322
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 42,
+      "timestamp_unix": 1769565798.132755,
+      "timings_ms": {
+        "mimi_encode": 0.014542005374096334,
+        "lm_forward": 286.8785409955308,
+        "mimi_decode": 44.38312500133179,
+        "total": 331.4862920087762
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 43,
+      "timestamp_unix": 1769565798.4907992,
+      "timings_ms": {
+        "mimi_encode": 0.015124998753890395,
+        "lm_forward": 265.2496669907123,
+        "mimi_decode": 43.276791999232955,
+        "total": 308.752958997502
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 44,
+      "timestamp_unix": 1769565798.8310568,
+      "timings_ms": {
+        "mimi_encode": 0.020333012798801064,
+        "lm_forward": 277.84337499178946,
+        "mimi_decode": 44.31495800963603,
+        "total": 322.379125005682
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 45,
+      "timestamp_unix": 1769565799.17953,
+      "timings_ms": {
+        "mimi_encode": 0.027874993975274265,
+        "lm_forward": 267.9056670021964,
+        "mimi_decode": 44.279082998400554,
+        "total": 312.42745798954275
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 46,
+      "timestamp_unix": 1769565799.518734,
+      "timings_ms": {
+        "mimi_encode": 0.014374993043020368,
+        "lm_forward": 259.8470830125734,
+        "mimi_decode": 45.74879199208226,
+        "total": 305.8197500067763
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 47,
+      "timestamp_unix": 1769565799.849356,
+      "timings_ms": {
+        "mimi_encode": 0.010499992640689015,
+        "lm_forward": 278.56033301213756,
+        "mimi_decode": 47.04858399054501,
+        "total": 325.90608300233725
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 48,
+      "timestamp_unix": 1769565800.200504,
+      "timings_ms": {
+        "mimi_encode": 0.03462500171735883,
+        "lm_forward": 269.4822500052396,
+        "mimi_decode": 42.94441700039897,
+        "total": 312.7193330001319
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 49,
+      "timestamp_unix": 1769565800.538089,
+      "timings_ms": {
+        "mimi_encode": 0.016457997844554484,
+        "lm_forward": 260.36450000538025,
+        "mimi_decode": 41.953749998356216,
+        "total": 302.5503749959171
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 50,
+      "timestamp_unix": 1769565800.863737,
+      "timings_ms": {
+        "mimi_encode": 0.015875004464760423,
+        "lm_forward": 266.62574999500066,
+        "mimi_decode": 43.555708005442284,
+        "total": 310.4135830071755
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 51,
+      "timestamp_unix": 1769565801.19855,
+      "timings_ms": {
+        "mimi_encode": 0.014707999071106315,
+        "lm_forward": 271.3201250007842,
+        "mimi_decode": 44.21316699881572,
+        "total": 315.7562499982305
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 52,
+      "timestamp_unix": 1769565801.5402398,
+      "timings_ms": {
+        "mimi_encode": 0.016834004782140255,
+        "lm_forward": 267.9833750007674,
+        "mimi_decode": 45.24216600111686,
+        "total": 313.45583400980104
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.2,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 53,
+      "timestamp_unix": 1769565801.8777988,
+      "timings_ms": {
+        "mimi_encode": 0.02300000051036477,
+        "lm_forward": 265.8422919921577,
+        "mimi_decode": 47.54141700686887,
+        "total": 313.60916698758956
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.2,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 54,
+      "timestamp_unix": 1769565802.215328,
+      "timings_ms": {
+        "mimi_encode": 0.018749997252598405,
+        "lm_forward": 265.66245799767785,
+        "mimi_decode": 42.275083003914915,
+        "total": 308.1539580016397
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 55,
+      "timestamp_unix": 1769565802.547621,
+      "timings_ms": {
+        "mimi_encode": 0.012333010090515018,
+        "lm_forward": 269.252250000136,
+        "mimi_decode": 47.69083399150986,
+        "total": 317.15783300751355
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 56,
+      "timestamp_unix": 1769565802.890835,
+      "timings_ms": {
+        "mimi_encode": 0.012750009773299098,
+        "lm_forward": 261.3250419963151,
+        "mimi_decode": 44.51287499978207,
+        "total": 306.0430840123445
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 57,
+      "timestamp_unix": 1769565803.221258,
+      "timings_ms": {
+        "mimi_encode": 0.0160830095410347,
+        "lm_forward": 259.0990000026068,
+        "mimi_decode": 44.53441700024996,
+        "total": 303.8780000060797
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 58,
+      "timestamp_unix": 1769565803.5487092,
+      "timings_ms": {
+        "mimi_encode": 0.020666993805207312,
+        "lm_forward": 263.49191600456834,
+        "mimi_decode": 42.92620900378097,
+        "total": 306.64791699382477
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 59,
+      "timestamp_unix": 1769565803.8791082,
+      "timings_ms": {
+        "mimi_encode": 0.014499993994832039,
+        "lm_forward": 264.8331660020631,
+        "mimi_decode": 42.72208400652744,
+        "total": 307.8692499984754
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 60,
+      "timestamp_unix": 1769565804.2106361,
+      "timings_ms": {
+        "mimi_encode": 0.027624992071650922,
+        "lm_forward": 263.85250000748783,
+        "mimi_decode": 42.56995799369179,
+        "total": 306.6562919993885
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 61,
+      "timestamp_unix": 1769565804.5405,
+      "timings_ms": {
+        "mimi_encode": 0.014042001566849649,
+        "lm_forward": 260.3072079946287,
+        "mimi_decode": 44.904624999617226,
+        "total": 305.45408399484586
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 62,
+      "timestamp_unix": 1769565804.8690538,
+      "timings_ms": {
+        "mimi_encode": 0.04341699241194874,
+        "lm_forward": 257.25283300562296,
+        "mimi_decode": 44.353624994982965,
+        "total": 301.85333399276715
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 63,
+      "timestamp_unix": 1769565805.194033,
+      "timings_ms": {
+        "mimi_encode": 0.014124991139397025,
+        "lm_forward": 263.95270800276194,
+        "mimi_decode": 39.57891699974425,
+        "total": 303.75241598812863
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.8,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 64,
+      "timestamp_unix": 1769565805.521695,
+      "timings_ms": {
+        "mimi_encode": 0.009750001481734216,
+        "lm_forward": 258.29370800056495,
+        "mimi_decode": 43.2918340084143,
+        "total": 301.8896670109825
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 65,
+      "timestamp_unix": 1769565805.84738,
+      "timings_ms": {
+        "mimi_encode": 0.012125005014240742,
+        "lm_forward": 261.5484169946285,
+        "mimi_decode": 43.86329201224726,
+        "total": 305.6251250091009
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 66,
+      "timestamp_unix": 1769565806.178151,
+      "timings_ms": {
+        "mimi_encode": 0.010458010365255177,
+        "lm_forward": 262.39208299375605,
+        "mimi_decode": 42.49333399638999,
+        "total": 305.102041005739
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 67,
+      "timestamp_unix": 1769565806.507448,
+      "timings_ms": {
+        "mimi_encode": 0.012459000572562218,
+        "lm_forward": 273.1211659993278,
+        "mimi_decode": 42.81216701201629,
+        "total": 316.1637090088334
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 68,
+      "timestamp_unix": 1769565806.847127,
+      "timings_ms": {
+        "mimi_encode": 0.010832998668774962,
+        "lm_forward": 265.03658399451524,
+        "mimi_decode": 43.302000005496666,
+        "total": 308.66733299626503
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 69,
+      "timestamp_unix": 1769565807.179277,
+      "timings_ms": {
+        "mimi_encode": 0.01679199340287596,
+        "lm_forward": 258.34866700461134,
+        "mimi_decode": 42.912082994007505,
+        "total": 301.50895900442265
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 70,
+      "timestamp_unix": 1769565807.5047832,
+      "timings_ms": {
+        "mimi_encode": 0.01029099803417921,
+        "lm_forward": 260.9649999940302,
+        "mimi_decode": 43.335834008757956,
+        "total": 304.5188749965746
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 71,
+      "timestamp_unix": 1769565807.832353,
+      "timings_ms": {
+        "mimi_encode": 0.012082993634976447,
+        "lm_forward": 256.857416999992,
+        "mimi_decode": 43.13895800441969,
+        "total": 300.2133749978384
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 72,
+      "timestamp_unix": 1769565808.156493,
+      "timings_ms": {
+        "mimi_encode": 0.011665993952192366,
+        "lm_forward": 267.5971249991562,
+        "mimi_decode": 43.76391701225657,
+        "total": 311.56683299923316
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.0,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 73,
+      "timestamp_unix": 1769565808.491748,
+      "timings_ms": {
+        "mimi_encode": 0.01808399974834174,
+        "lm_forward": 269.8473749915138,
+        "mimi_decode": 43.08600000513252,
+        "total": 313.15062499197666
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 74,
+      "timestamp_unix": 1769565808.828307,
+      "timings_ms": {
+        "mimi_encode": 0.027834001230075955,
+        "lm_forward": 268.9749159908388,
+        "mimi_decode": 46.685792010976,
+        "total": 315.92195900157094
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 75,
+      "timestamp_unix": 1769565809.1709802,
+      "timings_ms": {
+        "mimi_encode": 0.021750005544163287,
+        "lm_forward": 276.4991669973824,
+        "mimi_decode": 43.73370800749399,
+        "total": 320.4759170039324
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.8,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 76,
+      "timestamp_unix": 1769565809.515393,
+      "timings_ms": {
+        "mimi_encode": 0.025582994567230344,
+        "lm_forward": 264.2378339951392,
+        "mimi_decode": 43.97025000071153,
+        "total": 308.4341669891728
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 77,
+      "timestamp_unix": 1769565809.8470259,
+      "timings_ms": {
+        "mimi_encode": 0.011750002158805728,
+        "lm_forward": 265.1981669914676,
+        "mimi_decode": 42.23195801023394,
+        "total": 307.6440000004368
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 78,
+      "timestamp_unix": 1769565810.179584,
+      "timings_ms": {
+        "mimi_encode": 0.01750000228639692,
+        "lm_forward": 260.7201659993734,
+        "mimi_decode": 43.23145899979863,
+        "total": 304.1528329922585
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 79,
+      "timestamp_unix": 1769565810.508057,
+      "timings_ms": {
+        "mimi_encode": 0.013875003787688911,
+        "lm_forward": 259.47741699928883,
+        "mimi_decode": 44.1368329920806,
+        "total": 303.8432089961134
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 80,
+      "timestamp_unix": 1769565810.835902,
+      "timings_ms": {
+        "mimi_encode": 0.012415999663062394,
+        "lm_forward": 261.3651249994291,
+        "mimi_decode": 42.70341699884739,
+        "total": 304.28666599618737
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 81,
+      "timestamp_unix": 1769565811.164812,
+      "timings_ms": {
+        "mimi_encode": 0.011916999937966466,
+        "lm_forward": 261.5832919982495,
+        "mimi_decode": 44.182582991197705,
+        "total": 305.9897089988226
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.4,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 82,
+      "timestamp_unix": 1769565811.4950101,
+      "timings_ms": {
+        "mimi_encode": 0.018291000742465258,
+        "lm_forward": 261.18674999452196,
+        "mimi_decode": 45.01541699573863,
+        "total": 306.4548330003163
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 83,
+      "timestamp_unix": 1769565811.827337,
+      "timings_ms": {
+        "mimi_encode": 0.011083000572398305,
+        "lm_forward": 266.07466700079385,
+        "mimi_decode": 44.52570799912792,
+        "total": 310.87970799126197
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 84,
+      "timestamp_unix": 1769565812.1638012,
+      "timings_ms": {
+        "mimi_encode": 0.01304100442212075,
+        "lm_forward": 263.6664169986034,
+        "mimi_decode": 43.08037500595674,
+        "total": 306.9646660005674
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 85,
+      "timestamp_unix": 1769565812.494739,
+      "timings_ms": {
+        "mimi_encode": 0.011042007827199996,
+        "lm_forward": 261.07958299689926,
+        "mimi_decode": 42.68874999252148,
+        "total": 303.9994170103455
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.4,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 86,
+      "timestamp_unix": 1769565812.8235059,
+      "timings_ms": {
+        "mimi_encode": 0.01620799594093114,
+        "lm_forward": 262.6591250009369,
+        "mimi_decode": 43.11295799561776,
+        "total": 306.0050409985706
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 87,
+      "timestamp_unix": 1769565813.1543171,
+      "timings_ms": {
+        "mimi_encode": 0.011416996130719781,
+        "lm_forward": 259.37795799109153,
+        "mimi_decode": 43.51537500042468,
+        "total": 303.33579199214
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 88,
+      "timestamp_unix": 1769565813.4812548,
+      "timings_ms": {
+        "mimi_encode": 0.009458992280997336,
+        "lm_forward": 256.35300000431016,
+        "mimi_decode": 43.03579099359922,
+        "total": 299.6106249920558
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 89,
+      "timestamp_unix": 1769565813.803256,
+      "timings_ms": {
+        "mimi_encode": 0.01891700958367437,
+        "lm_forward": 263.75870799529366,
+        "mimi_decode": 44.06345900497399,
+        "total": 308.0514589964878
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 90,
+      "timestamp_unix": 1769565814.1373482,
+      "timings_ms": {
+        "mimi_encode": 0.028833004762418568,
+        "lm_forward": 269.78891700855456,
+        "mimi_decode": 42.47324999596458,
+        "total": 312.4927500030026
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18282.0,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 91,
+      "timestamp_unix": 1769565814.473896,
+      "timings_ms": {
+        "mimi_encode": 0.015416997484862804,
+        "lm_forward": 265.05074999295175,
+        "mimi_decode": 43.59216699958779,
+        "total": 308.8493749964982
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 92,
+      "timestamp_unix": 1769565814.807282,
+      "timings_ms": {
+        "mimi_encode": 0.012542004697024822,
+        "lm_forward": 267.26949999283534,
+        "mimi_decode": 45.38520800997503,
+        "total": 312.8925829951186
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 93,
+      "timestamp_unix": 1769565815.146755,
+      "timings_ms": {
+        "mimi_encode": 0.016416990547440946,
+        "lm_forward": 262.4527500011027,
+        "mimi_decode": 42.74362500291318,
+        "total": 305.4120000015246
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.0,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 94,
+      "timestamp_unix": 1769565815.4754932,
+      "timings_ms": {
+        "mimi_encode": 0.011665993952192366,
+        "lm_forward": 262.04737499938346,
+        "mimi_decode": 43.11483399942517,
+        "total": 305.3637079865439
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 95,
+      "timestamp_unix": 1769565815.80565,
+      "timings_ms": {
+        "mimi_encode": 0.015249999705702066,
+        "lm_forward": 263.439666989143,
+        "mimi_decode": 42.983875013305806,
+        "total": 306.63220799760893
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.2,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 96,
+      "timestamp_unix": 1769565816.138189,
+      "timings_ms": {
+        "mimi_encode": 0.011708005331456661,
+        "lm_forward": 269.4456250028452,
+        "mimi_decode": 44.59649999625981,
+        "total": 314.24608299857937
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 97,
+      "timestamp_unix": 1769565816.478495,
+      "timings_ms": {
+        "mimi_encode": 0.03937499423045665,
+        "lm_forward": 265.54429199313745,
+        "mimi_decode": 42.29945800034329,
+        "total": 308.0836669978453
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 98,
+      "timestamp_unix": 1769565816.8111439,
+      "timings_ms": {
+        "mimi_encode": 0.0118750031106174,
+        "lm_forward": 267.92920799925923,
+        "mimi_decode": 44.237708003493026,
+        "total": 312.387291007326
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.4,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 99,
+      "timestamp_unix": 1769565817.148858,
+      "timings_ms": {
+        "mimi_encode": 0.012916993000544608,
+        "lm_forward": 267.87533299648203,
+        "mimi_decode": 45.897417003288865,
+        "total": 313.9828339917585
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 100,
+      "timestamp_unix": 1769565817.489193,
+      "timings_ms": {
+        "mimi_encode": 0.01391599653288722,
+        "lm_forward": 271.931167008006,
+        "mimi_decode": 44.746208004653454,
+        "total": 316.87999999849126
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 101,
+      "timestamp_unix": 1769565817.830862,
+      "timings_ms": {
+        "mimi_encode": 0.013416007277555764,
+        "lm_forward": 268.5138749948237,
+        "mimi_decode": 44.21199999342207,
+        "total": 312.993750005262
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 102,
+      "timestamp_unix": 1769565818.169562,
+      "timings_ms": {
+        "mimi_encode": 0.010124989785254002,
+        "lm_forward": 260.8857919985894,
+        "mimi_decode": 43.74787501001265,
+        "total": 304.8549999948591
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 103,
+      "timestamp_unix": 1769565818.4990091,
+      "timings_ms": {
+        "mimi_encode": 0.014542005374096334,
+        "lm_forward": 264.88516699464526,
+        "mimi_decode": 43.32966600486543,
+        "total": 308.4502920100931
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 104,
+      "timestamp_unix": 1769565818.8321788,
+      "timings_ms": {
+        "mimi_encode": 0.010415998985990882,
+        "lm_forward": 264.6633749973262,
+        "mimi_decode": 43.940874995314516,
+        "total": 308.8555829890538
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 105,
+      "timestamp_unix": 1769565819.167369,
+      "timings_ms": {
+        "mimi_encode": 0.016249992768280208,
+        "lm_forward": 275.1100830064388,
+        "mimi_decode": 42.39258400048129,
+        "total": 317.70829200104345
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 106,
+      "timestamp_unix": 1769565819.50915,
+      "timings_ms": {
+        "mimi_encode": 0.04083299427293241,
+        "lm_forward": 266.10675000119954,
+        "mimi_decode": 46.6519170004176,
+        "total": 312.98999999125954
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 107,
+      "timestamp_unix": 1769565819.846538,
+      "timings_ms": {
+        "mimi_encode": 0.021208004909567535,
+        "lm_forward": 265.4162079998059,
+        "mimi_decode": 45.18029199971352,
+        "total": 310.9177500009537
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 108,
+      "timestamp_unix": 1769565820.181918,
+      "timings_ms": {
+        "mimi_encode": 0.016166988643817604,
+        "lm_forward": 265.49745800730307,
+        "mimi_decode": 42.85704200447071,
+        "total": 308.64470898814034
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.8,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 109,
+      "timestamp_unix": 1769565820.5146601,
+      "timings_ms": {
+        "mimi_encode": 0.015083991456776857,
+        "lm_forward": 267.28487500804476,
+        "mimi_decode": 45.21833299077116,
+        "total": 312.7224999916507
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 110,
+      "timestamp_unix": 1769565820.850844,
+      "timings_ms": {
+        "mimi_encode": 0.01420799526385963,
+        "lm_forward": 262.47099999454804,
+        "mimi_decode": 43.58958300144877,
+        "total": 306.273832989973
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 111,
+      "timestamp_unix": 1769565821.181338,
+      "timings_ms": {
+        "mimi_encode": 0.016417005099356174,
+        "lm_forward": 265.81345799786504,
+        "mimi_decode": 45.28033400129061,
+        "total": 311.3262920087436
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 112,
+      "timestamp_unix": 1769565821.5162072,
+      "timings_ms": {
+        "mimi_encode": 0.013040989870205522,
+        "lm_forward": 263.4052920038812,
+        "mimi_decode": 44.105207998654805,
+        "total": 307.737332987017
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 113,
+      "timestamp_unix": 1769565821.847478,
+      "timings_ms": {
+        "mimi_encode": 0.013790995581075549,
+        "lm_forward": 268.0167920043459,
+        "mimi_decode": 44.05245798989199,
+        "total": 312.49433298944496
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 114,
+      "timestamp_unix": 1769565822.187525,
+      "timings_ms": {
+        "mimi_encode": 0.02270900586154312,
+        "lm_forward": 265.03720799519215,
+        "mimi_decode": 43.564457999309525,
+        "total": 308.8229590066476
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.8,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 115,
+      "timestamp_unix": 1769565822.521767,
+      "timings_ms": {
+        "mimi_encode": 0.013249999028630555,
+        "lm_forward": 264.0025419968879,
+        "mimi_decode": 43.5370830091415,
+        "total": 307.79449999681674
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 116,
+      "timestamp_unix": 1769565822.854327,
+      "timings_ms": {
+        "mimi_encode": 0.03374999505467713,
+        "lm_forward": 279.4536250003148,
+        "mimi_decode": 45.62587500549853,
+        "total": 325.4150830034632
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.2,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 117,
+      "timestamp_unix": 1769565823.206198,
+      "timings_ms": {
+        "mimi_encode": 0.012832999345846474,
+        "lm_forward": 269.08687500690576,
+        "mimi_decode": 44.36779199750163,
+        "total": 313.6715419968823
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.0,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 118,
+      "timestamp_unix": 1769565823.543701,
+      "timings_ms": {
+        "mimi_encode": 0.015124998753890395,
+        "lm_forward": 287.85837499890476,
+        "mimi_decode": 48.06620901217684,
+        "total": 336.1469590017805
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 119,
+      "timestamp_unix": 1769565823.9066172,
+      "timings_ms": {
+        "mimi_encode": 0.01604200224392116,
+        "lm_forward": 280.73570800188463,
+        "mimi_decode": 42.100334001588635,
+        "total": 323.09737500327174
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 120,
+      "timestamp_unix": 1769565824.255571,
+      "timings_ms": {
+        "mimi_encode": 0.01233299553859979,
+        "lm_forward": 278.9323340111878,
+        "mimi_decode": 45.48179099219851,
+        "total": 324.74162500875536
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 121,
+      "timestamp_unix": 1769565824.605262,
+      "timings_ms": {
+        "mimi_encode": 0.013208002201281488,
+        "lm_forward": 273.6725419963477,
+        "mimi_decode": 46.29787500016391,
+        "total": 320.19866700284183
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 122,
+      "timestamp_unix": 1769565824.952965,
+      "timings_ms": {
+        "mimi_encode": 0.016292004147544503,
+        "lm_forward": 281.4407910045702,
+        "mimi_decode": 46.0384170000907,
+        "total": 327.69779200316407
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 123,
+      "timestamp_unix": 1769565825.305228,
+      "timings_ms": {
+        "mimi_encode": 0.03895799454767257,
+        "lm_forward": 275.04691699869,
+        "mimi_decode": 47.23012501199264,
+        "total": 322.52320800034795
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.4,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 124,
+      "timestamp_unix": 1769565825.651384,
+      "timings_ms": {
+        "mimi_encode": 0.03287500294391066,
+        "lm_forward": 276.5920410020044,
+        "mimi_decode": 48.56133399880491,
+        "total": 325.44595800573006
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 125,
+      "timestamp_unix": 1769565826.005137,
+      "timings_ms": {
+        "mimi_encode": 0.010250005288980901,
+        "lm_forward": 279.7346250008559,
+        "mimi_decode": 44.36983300547581,
+        "total": 324.33795800898224
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 126,
+      "timestamp_unix": 1769565826.355967,
+      "timings_ms": {
+        "mimi_encode": 0.014125005691312253,
+        "lm_forward": 269.6668329881504,
+        "mimi_decode": 43.54787500051316,
+        "total": 313.4587499953341
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.4,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 127,
+      "timestamp_unix": 1769565826.6956758,
+      "timings_ms": {
+        "mimi_encode": 0.013291995855979621,
+        "lm_forward": 270.6418329908047,
+        "mimi_decode": 48.49687500973232,
+        "total": 319.34291699144524
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 128,
+      "timestamp_unix": 1769565827.042061,
+      "timings_ms": {
+        "mimi_encode": 0.018708989955484867,
+        "lm_forward": 276.11225000873674,
+        "mimi_decode": 43.47566599608399,
+        "total": 319.8373339982936
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.8,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 129,
+      "timestamp_unix": 1769565827.382702,
+      "timings_ms": {
+        "mimi_encode": 0.01608299498911947,
+        "lm_forward": 281.74058299919125,
+        "mimi_decode": 44.333334008115344,
+        "total": 326.3983329961775
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 130,
+      "timestamp_unix": 1769565827.7346509,
+      "timings_ms": {
+        "mimi_encode": 0.02358300844207406,
+        "lm_forward": 271.72870899084955,
+        "mimi_decode": 44.403958003385924,
+        "total": 316.3719580043107
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.8,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 131,
+      "timestamp_unix": 1769565828.0738099,
+      "timings_ms": {
+        "mimi_encode": 0.04141700628679246,
+        "lm_forward": 275.2633749914821,
+        "mimi_decode": 46.27762500604149,
+        "total": 321.8510000006063
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 132,
+      "timestamp_unix": 1769565828.422216,
+      "timings_ms": {
+        "mimi_encode": 0.01866700768005103,
+        "lm_forward": 265.873707990977,
+        "mimi_decode": 43.71725000964943,
+        "total": 309.83254199963994
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18282.0,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 133,
+      "timestamp_unix": 1769565828.759305,
+      "timings_ms": {
+        "mimi_encode": 0.013666998711414635,
+        "lm_forward": 267.7141250023851,
+        "mimi_decode": 42.83279199444223,
+        "total": 310.7624589902116
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 134,
+      "timestamp_unix": 1769565829.0939221,
+      "timings_ms": {
+        "mimi_encode": 0.031916992156766355,
+        "lm_forward": 275.8294579980429,
+        "mimi_decode": 46.39287501049694,
+        "total": 322.4672499927692
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 135,
+      "timestamp_unix": 1769565829.442351,
+      "timings_ms": {
+        "mimi_encode": 0.027417001547291875,
+        "lm_forward": 268.9764170063427,
+        "mimi_decode": 44.746540996129625,
+        "total": 313.94491699757054
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.0,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 136,
+      "timestamp_unix": 1769565829.780973,
+      "timings_ms": {
+        "mimi_encode": 0.013708006008528173,
+        "lm_forward": 265.24241699371487,
+        "mimi_decode": 43.100666007376276,
+        "total": 308.60137499985285
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 137,
+      "timestamp_unix": 1769565830.1151412,
+      "timings_ms": {
+        "mimi_encode": 0.017291997210122645,
+        "lm_forward": 265.2434159972472,
+        "mimi_decode": 44.88337499788031,
+        "total": 310.32541699823923
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.2,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 138,
+      "timestamp_unix": 1769565830.450416,
+      "timings_ms": {
+        "mimi_encode": 0.014124991139397025,
+        "lm_forward": 268.9358330098912,
+        "mimi_decode": 41.338791997986846,
+        "total": 310.4870410024887
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 139,
+      "timestamp_unix": 1769565830.7862139,
+      "timings_ms": {
+        "mimi_encode": 0.013084005331620574,
+        "lm_forward": 272.19454100122675,
+        "mimi_decode": 42.53920899645891,
+        "total": 314.9720000074012
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 140,
+      "timestamp_unix": 1769565831.1285388,
+      "timings_ms": {
+        "mimi_encode": 0.021499989088624716,
+        "lm_forward": 270.42933300253935,
+        "mimi_decode": 43.04495800170116,
+        "total": 313.72291599109303
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 141,
+      "timestamp_unix": 1769565831.4657521,
+      "timings_ms": {
+        "mimi_encode": 0.016542006051167846,
+        "lm_forward": 269.36158300668467,
+        "mimi_decode": 44.77716700057499,
+        "total": 314.3790000031004
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 142,
+      "timestamp_unix": 1769565831.805182,
+      "timings_ms": {
+        "mimi_encode": 0.013084005331620574,
+        "lm_forward": 262.6507909881184,
+        "mimi_decode": 42.84558400104288,
+        "total": 305.7284590031486
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 143,
+      "timestamp_unix": 1769565832.1360419,
+      "timings_ms": {
+        "mimi_encode": 0.013708995538763702,
+        "lm_forward": 261.6819579998264,
+        "mimi_decode": 44.273417006479576,
+        "total": 306.17137500667013
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 144,
+      "timestamp_unix": 1769565832.4679198,
+      "timings_ms": {
+        "mimi_encode": 0.02779200440272689,
+        "lm_forward": 264.4151249987772,
+        "mimi_decode": 42.18316600599792,
+        "total": 306.83720800152514
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 145,
+      "timestamp_unix": 1769565832.798665,
+      "timings_ms": {
+        "mimi_encode": 0.013208002201281488,
+        "lm_forward": 298.59954200219363,
+        "mimi_decode": 47.59770800592378,
+        "total": 346.45704200374894
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 146,
+      "timestamp_unix": 1769565833.1722538,
+      "timings_ms": {
+        "mimi_encode": 0.04008300311397761,
+        "lm_forward": 332.8424169885693,
+        "mimi_decode": 48.466208012541756,
+        "total": 381.5827910002554
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 147,
+      "timestamp_unix": 1769565833.5789042,
+      "timings_ms": {
+        "mimi_encode": 0.017750004190020263,
+        "lm_forward": 278.32937499624677,
+        "mimi_decode": 48.08466701069847,
+        "total": 326.6860840085428
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 148,
+      "timestamp_unix": 1769565833.933737,
+      "timings_ms": {
+        "mimi_encode": 0.014457997167482972,
+        "lm_forward": 287.7717079973081,
+        "mimi_decode": 45.82495900103822,
+        "total": 333.8625409960514
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 149,
+      "timestamp_unix": 1769565834.292634,
+      "timings_ms": {
+        "mimi_encode": 0.03300000389572233,
+        "lm_forward": 269.14233299612533,
+        "mimi_decode": 43.61283300386276,
+        "total": 312.97487499250565
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 150,
+      "timestamp_unix": 1769565834.630084,
+      "timings_ms": {
+        "mimi_encode": 0.013707991456612945,
+        "lm_forward": 286.911584000336,
+        "mimi_decode": 41.89425001095515,
+        "total": 329.53591700061224
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.8,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 151,
+      "timestamp_unix": 1769565834.988574,
+      "timings_ms": {
+        "mimi_encode": 0.0551249977434054,
+        "lm_forward": 270.10641600645613,
+        "mimi_decode": 46.14720899553504,
+        "total": 316.6707909986144
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 152,
+      "timestamp_unix": 1769565835.330076,
+      "timings_ms": {
+        "mimi_encode": 0.028416005079634488,
+        "lm_forward": 271.64895899477415,
+        "mimi_decode": 45.53950000263285,
+        "total": 317.43266600824427
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 153,
+      "timestamp_unix": 1769565835.671649,
+      "timings_ms": {
+        "mimi_encode": 0.01958299253601581,
+        "lm_forward": 270.75750000949483,
+        "mimi_decode": 44.1626669926336,
+        "total": 315.1263749896316
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 154,
+      "timestamp_unix": 1769565836.011816,
+      "timings_ms": {
+        "mimi_encode": 0.011665993952192366,
+        "lm_forward": 267.8885000059381,
+        "mimi_decode": 45.815584002411924,
+        "total": 314.00933300028555
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 155,
+      "timestamp_unix": 1769565836.35215,
+      "timings_ms": {
+        "mimi_encode": 0.012666001566685736,
+        "lm_forward": 259.78216700605117,
+        "mimi_decode": 43.09212499356363,
+        "total": 303.09200000192504
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 156,
+      "timestamp_unix": 1769565836.679788,
+      "timings_ms": {
+        "mimi_encode": 0.011416996130719781,
+        "lm_forward": 267.9802079946967,
+        "mimi_decode": 42.9312500054948,
+        "total": 311.18462499580346
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 157,
+      "timestamp_unix": 1769565837.016673,
+      "timings_ms": {
+        "mimi_encode": 0.01654100196901709,
+        "lm_forward": 265.18091700563673,
+        "mimi_decode": 43.129166995640844,
+        "total": 308.5141659976216
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.8,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 158,
+      "timestamp_unix": 1769565837.348625,
+      "timings_ms": {
+        "mimi_encode": 0.022249994799494743,
+        "lm_forward": 258.37666699953843,
+        "mimi_decode": 42.44945800746791,
+        "total": 301.0634999955073
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.2,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 159,
+      "timestamp_unix": 1769565837.673544,
+      "timings_ms": {
+        "mimi_encode": 0.009958006558008492,
+        "lm_forward": 265.1527080015512,
+        "mimi_decode": 46.139291996951215,
+        "total": 311.5202080080053
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 160,
+      "timestamp_unix": 1769565838.0095732,
+      "timings_ms": {
+        "mimi_encode": 0.015208002878353,
+        "lm_forward": 282.39595900231507,
+        "mimi_decode": 42.537540997727774,
+        "total": 325.28533300501294
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 161,
+      "timestamp_unix": 1769565838.3603032,
+      "timings_ms": {
+        "mimi_encode": 0.013917000615037978,
+        "lm_forward": 261.34599999932107,
+        "mimi_decode": 42.22854100225959,
+        "total": 303.81779199524317
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 162,
+      "timestamp_unix": 1769565838.6879418,
+      "timings_ms": {
+        "mimi_encode": 0.014082994312047958,
+        "lm_forward": 269.14858300006017,
+        "mimi_decode": 41.962959003285505,
+        "total": 311.3257910008542
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 163,
+      "timestamp_unix": 1769565839.024556,
+      "timings_ms": {
+        "mimi_encode": 0.012958000297658145,
+        "lm_forward": 271.5583749959478,
+        "mimi_decode": 43.98083299747668,
+        "total": 315.7742499897722
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 164,
+      "timestamp_unix": 1769565839.3641632,
+      "timings_ms": {
+        "mimi_encode": 0.013540993677452207,
+        "lm_forward": 259.6179590036627,
+        "mimi_decode": 43.24724999605678,
+        "total": 303.0620409990661
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 165,
+      "timestamp_unix": 1769565839.690955,
+      "timings_ms": {
+        "mimi_encode": 0.012042000889778137,
+        "lm_forward": 261.97520799178164,
+        "mimi_decode": 45.83133400592487,
+        "total": 308.15129198890645
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.4,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 166,
+      "timestamp_unix": 1769565840.023344,
+      "timings_ms": {
+        "mimi_encode": 0.01833400165196508,
+        "lm_forward": 268.5120829992229,
+        "mimi_decode": 44.67408299387898,
+        "total": 313.4053749963641
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 167,
+      "timestamp_unix": 1769565840.361163,
+      "timings_ms": {
+        "mimi_encode": 0.013333992683328688,
+        "lm_forward": 266.6449160024058,
+        "mimi_decode": 43.30229200422764,
+        "total": 310.2309999958379
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 168,
+      "timestamp_unix": 1769565840.697633,
+      "timings_ms": {
+        "mimi_encode": 0.011625001206994057,
+        "lm_forward": 267.25204099784605,
+        "mimi_decode": 43.73504199611489,
+        "total": 311.2038749968633
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.4,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 169,
+      "timestamp_unix": 1769565841.0327702,
+      "timings_ms": {
+        "mimi_encode": 0.014582998119294643,
+        "lm_forward": 274.3662499997299,
+        "mimi_decode": 43.475084006786346,
+        "total": 318.038625002373
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 170,
+      "timestamp_unix": 1769565841.373726,
+      "timings_ms": {
+        "mimi_encode": 0.022249994799494743,
+        "lm_forward": 269.72920799744315,
+        "mimi_decode": 43.52612500952091,
+        "total": 313.47612499666866
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.0,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 171,
+      "timestamp_unix": 1769565841.712403,
+      "timings_ms": {
+        "mimi_encode": 0.011750002158805728,
+        "lm_forward": 255.01620800059754,
+        "mimi_decode": 41.056583999306895,
+        "total": 296.3091249985155
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 172,
+      "timestamp_unix": 1769565842.0339031,
+      "timings_ms": {
+        "mimi_encode": 0.013958997442387044,
+        "lm_forward": 275.06216599431355,
+        "mimi_decode": 43.84104200289585,
+        "total": 319.13533399347216
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.8,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 173,
+      "timestamp_unix": 1769565842.37583,
+      "timings_ms": {
+        "mimi_encode": 0.020457999198697507,
+        "lm_forward": 260.8145419944776,
+        "mimi_decode": 43.22616600256879,
+        "total": 304.26733299100306
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 174,
+      "timestamp_unix": 1769565842.705017,
+      "timings_ms": {
+        "mimi_encode": 0.01287501072511077,
+        "lm_forward": 276.2346249946859,
+        "mimi_decode": 45.844124993891455,
+        "total": 322.29675000417046
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18282.0,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 175,
+      "timestamp_unix": 1769565843.058409,
+      "timings_ms": {
+        "mimi_encode": 0.016292004147544503,
+        "lm_forward": 280.7183749973774,
+        "mimi_decode": 46.68666599900462,
+        "total": 327.64899999892805
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.4,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 176,
+      "timestamp_unix": 1769565843.4118001,
+      "timings_ms": {
+        "mimi_encode": 0.06229199061635882,
+        "lm_forward": 283.5303330066381,
+        "mimi_decode": 43.720375004340895,
+        "total": 327.51074999396224
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 177,
+      "timestamp_unix": 1769565843.7643762,
+      "timings_ms": {
+        "mimi_encode": 0.01666699245106429,
+        "lm_forward": 269.85950001107994,
+        "mimi_decode": 43.97320799762383,
+        "total": 314.04433299030643
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 178,
+      "timestamp_unix": 1769565844.1018748,
+      "timings_ms": {
+        "mimi_encode": 0.028250011382624507,
+        "lm_forward": 285.4701249889331,
+        "mimi_decode": 45.917084004031494,
+        "total": 331.64895900699776
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 179,
+      "timestamp_unix": 1769565844.458542,
+      "timings_ms": {
+        "mimi_encode": 0.021041996660642326,
+        "lm_forward": 276.40795800834894,
+        "mimi_decode": 44.6654999977909,
+        "total": 321.2840000051074
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.2,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 180,
+      "timestamp_unix": 1769565844.805793,
+      "timings_ms": {
+        "mimi_encode": 0.020082996343262494,
+        "lm_forward": 265.78587500262074,
+        "mimi_decode": 44.627291994402185,
+        "total": 310.6534999969881
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 181,
+      "timestamp_unix": 1769565845.1419048,
+      "timings_ms": {
+        "mimi_encode": 0.012375006917864084,
+        "lm_forward": 269.8201669991249,
+        "mimi_decode": 46.96337500354275,
+        "total": 317.0221250038594
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 182,
+      "timestamp_unix": 1769565845.4845068,
+      "timings_ms": {
+        "mimi_encode": 0.0118750031106174,
+        "lm_forward": 263.64054199075326,
+        "mimi_decode": 42.73000000102911,
+        "total": 306.5885830001207
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 183,
+      "timestamp_unix": 1769565845.8163111,
+      "timings_ms": {
+        "mimi_encode": 0.032500000088475645,
+        "lm_forward": 266.1682909965748,
+        "mimi_decode": 45.15029200410936,
+        "total": 311.5527909976663
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 184,
+      "timestamp_unix": 1769565846.153655,
+      "timings_ms": {
+        "mimi_encode": 0.012208998668938875,
+        "lm_forward": 267.3035829939181,
+        "mimi_decode": 43.462792003992945,
+        "total": 310.9890420018928
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 185,
+      "timestamp_unix": 1769565846.4877079,
+      "timings_ms": {
+        "mimi_encode": 0.012541000614874065,
+        "lm_forward": 263.4071250067791,
+        "mimi_decode": 43.342916993424296,
+        "total": 307.0316660014214
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 186,
+      "timestamp_unix": 1769565846.8203251,
+      "timings_ms": {
+        "mimi_encode": 0.024083987227641046,
+        "lm_forward": 279.6347080002306,
+        "mimi_decode": 45.98629201063886,
+        "total": 325.9239999897545
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 187,
+      "timestamp_unix": 1769565847.174979,
+      "timings_ms": {
+        "mimi_encode": 0.02649999805726111,
+        "lm_forward": 290.17400000884663,
+        "mimi_decode": 45.44487499515526,
+        "total": 335.8711670007324
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 188,
+      "timestamp_unix": 1769565847.537266,
+      "timings_ms": {
+        "mimi_encode": 0.014125005691312253,
+        "lm_forward": 278.46566699736286,
+        "mimi_decode": 44.70454200054519,
+        "total": 323.38866700592916
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18282.0,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 189,
+      "timestamp_unix": 1769565847.8865979,
+      "timings_ms": {
+        "mimi_encode": 0.014332996215671301,
+        "lm_forward": 268.6001249967376,
+        "mimi_decode": 44.153042006655596,
+        "total": 313.02541599143296
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 190,
+      "timestamp_unix": 1769565848.225506,
+      "timings_ms": {
+        "mimi_encode": 0.04124999395571649,
+        "lm_forward": 275.1237089978531,
+        "mimi_decode": 41.13929100276437,
+        "total": 316.68854199233465
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 191,
+      "timestamp_unix": 1769565848.56894,
+      "timings_ms": {
+        "mimi_encode": 0.01883300137706101,
+        "lm_forward": 268.8797079899814,
+        "mimi_decode": 45.320917008211836,
+        "total": 314.42116599646397
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 192,
+      "timestamp_unix": 1769565848.906827,
+      "timings_ms": {
+        "mimi_encode": 0.02008400042541325,
+        "lm_forward": 281.40766599972267,
+        "mimi_decode": 47.381416996358894,
+        "total": 329.01591699919663
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.8,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 193,
+      "timestamp_unix": 1769565849.2608361,
+      "timings_ms": {
+        "mimi_encode": 0.04791600804310292,
+        "lm_forward": 284.1952499875333,
+        "mimi_decode": 48.48462500376627,
+        "total": 332.91800000006333
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 194,
+      "timestamp_unix": 1769565849.617335,
+      "timings_ms": {
+        "mimi_encode": 0.02837499778252095,
+        "lm_forward": 264.1577089962084,
+        "mimi_decode": 45.138749992474914,
+        "total": 309.50341699644923
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 195,
+      "timestamp_unix": 1769565849.951472,
+      "timings_ms": {
+        "mimi_encode": 0.04066700057592243,
+        "lm_forward": 274.2457919957815,
+        "mimi_decode": 46.788874999037944,
+        "total": 321.37129199691117
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 196,
+      "timestamp_unix": 1769565850.297302,
+      "timings_ms": {
+        "mimi_encode": 0.009249997674487531,
+        "lm_forward": 276.2187920016004,
+        "mimi_decode": 45.650415995623916,
+        "total": 322.1595829963917
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 197,
+      "timestamp_unix": 1769565850.64551,
+      "timings_ms": {
+        "mimi_encode": 0.01516701013315469,
+        "lm_forward": 271.4109999942593,
+        "mimi_decode": 45.37000000709668,
+        "total": 316.9826670055045
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 198,
+      "timestamp_unix": 1769565850.986838,
+      "timings_ms": {
+        "mimi_encode": 0.019750004867091775,
+        "lm_forward": 276.2674169935053,
+        "mimi_decode": 46.29620800551493,
+        "total": 322.8025830030674
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 199,
+      "timestamp_unix": 1769565851.33334,
+      "timings_ms": {
+        "mimi_encode": 0.046250002924352884,
+        "lm_forward": 268.15054200415034,
+        "mimi_decode": 46.786958002485335,
+        "total": 315.733834009734
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.8,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 200,
+      "timestamp_unix": 1769565851.6773,
+      "timings_ms": {
+        "mimi_encode": 0.022499996703118086,
+        "lm_forward": 272.4223340046592,
+        "mimi_decode": 43.68445799627807,
+        "total": 316.34483400557656
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.2,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 201,
+      "timestamp_unix": 1769565852.01821,
+      "timings_ms": {
+        "mimi_encode": 0.009791008778847754,
+        "lm_forward": 273.15824999823235,
+        "mimi_decode": 44.97000000264961,
+        "total": 318.3676250046119
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 202,
+      "timestamp_unix": 1769565852.362677,
+      "timings_ms": {
+        "mimi_encode": 0.01666598836891353,
+        "lm_forward": 263.12029200198594,
+        "mimi_decode": 45.51379200711381,
+        "total": 308.88149999373127
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 203,
+      "timestamp_unix": 1769565852.695961,
+      "timings_ms": {
+        "mimi_encode": 0.016416001017205417,
+        "lm_forward": 273.4397500025807,
+        "mimi_decode": 45.66533399338368,
+        "total": 319.3572500022128
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 204,
+      "timestamp_unix": 1769565853.0417228,
+      "timings_ms": {
+        "mimi_encode": 0.0194160093087703,
+        "lm_forward": 273.9554589934414,
+        "mimi_decode": 42.76633300469257,
+        "total": 316.9801660114899
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 205,
+      "timestamp_unix": 1769565853.3831801,
+      "timings_ms": {
+        "mimi_encode": 0.02562499139457941,
+        "lm_forward": 264.90620800177567,
+        "mimi_decode": 41.276375006418675,
+        "total": 306.43312499159947
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 206,
+      "timestamp_unix": 1769565853.714543,
+      "timings_ms": {
+        "mimi_encode": 0.033125004847534,
+        "lm_forward": 263.7175409909105,
+        "mimi_decode": 45.473334001144394,
+        "total": 309.4912079977803
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 207,
+      "timestamp_unix": 1769565854.0484369,
+      "timings_ms": {
+        "mimi_encode": 0.02416699135210365,
+        "lm_forward": 269.4365000061225,
+        "mimi_decode": 47.99941700184718,
+        "total": 317.6827089919243
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.4,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 208,
+      "timestamp_unix": 1769565854.392832,
+      "timings_ms": {
+        "mimi_encode": 0.012417003745213151,
+        "lm_forward": 276.10679100325797,
+        "mimi_decode": 43.99170899705496,
+        "total": 320.3351670090342
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 209,
+      "timestamp_unix": 1769565854.73766,
+      "timings_ms": {
+        "mimi_encode": 0.024374996428377926,
+        "lm_forward": 268.07199999166187,
+        "mimi_decode": 44.2953750025481,
+        "total": 312.61008299770765
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 210,
+      "timestamp_unix": 1769565855.075176,
+      "timings_ms": {
+        "mimi_encode": 0.033082993468269706,
+        "lm_forward": 274.20749999873806,
+        "mimi_decode": 44.90062499826308,
+        "total": 319.3430409883149
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.4,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 211,
+      "timestamp_unix": 1769565855.421001,
+      "timings_ms": {
+        "mimi_encode": 0.03125000512227416,
+        "lm_forward": 276.7578750062967,
+        "mimi_decode": 45.19108399108518,
+        "total": 322.19608400191646
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 212,
+      "timestamp_unix": 1769565855.7700071,
+      "timings_ms": {
+        "mimi_encode": 0.02012500772252679,
+        "lm_forward": 277.94229199935216,
+        "mimi_decode": 44.181332996231504,
+        "total": 322.3461669986136
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.0,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 213,
+      "timestamp_unix": 1769565856.115904,
+      "timings_ms": {
+        "mimi_encode": 0.013625001884065568,
+        "lm_forward": 266.69783299439587,
+        "mimi_decode": 43.600499993772246,
+        "total": 310.5039579968434
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 214,
+      "timestamp_unix": 1769565856.4507678,
+      "timings_ms": {
+        "mimi_encode": 0.017625003238208592,
+        "lm_forward": 267.70366699201986,
+        "mimi_decode": 47.399875009432435,
+        "total": 315.41749999450985
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.8,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 215,
+      "timestamp_unix": 1769565856.7911098,
+      "timings_ms": {
+        "mimi_encode": 0.052333009080030024,
+        "lm_forward": 269.9759999959497,
+        "mimi_decode": 44.30399999546353,
+        "total": 314.53520800278056
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 216,
+      "timestamp_unix": 1769565857.129882,
+      "timings_ms": {
+        "mimi_encode": 0.024667009711265564,
+        "lm_forward": 270.18875000067055,
+        "mimi_decode": 43.323124991729856,
+        "total": 313.73541700304486
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18282.0,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 217,
+      "timestamp_unix": 1769565857.46844,
+      "timings_ms": {
+        "mimi_encode": 0.012290998711250722,
+        "lm_forward": 271.1905840114923,
+        "mimi_decode": 45.57899999781512,
+        "total": 317.02604101155885
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.4,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 218,
+      "timestamp_unix": 1769565857.810422,
+      "timings_ms": {
+        "mimi_encode": 0.02504199801478535,
+        "lm_forward": 268.35374999791384,
+        "mimi_decode": 42.870582998148166,
+        "total": 311.511416992289
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 219,
+      "timestamp_unix": 1769565858.1462379,
+      "timings_ms": {
+        "mimi_encode": 0.019708008039742708,
+        "lm_forward": 267.4013749929145,
+        "mimi_decode": 43.71158400317654,
+        "total": 311.41566700534895
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 220,
+      "timestamp_unix": 1769565858.484048,
+      "timings_ms": {
+        "mimi_encode": 0.018250007997266948,
+        "lm_forward": 268.575875001261,
+        "mimi_decode": 44.24029198708013,
+        "total": 313.0383749958128
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 221,
+      "timestamp_unix": 1769565858.820558,
+      "timings_ms": {
+        "mimi_encode": 0.01475001045037061,
+        "lm_forward": 267.1491669898387,
+        "mimi_decode": 43.89150001225062,
+        "total": 311.34583400853444
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.2,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 222,
+      "timestamp_unix": 1769565859.158039,
+      "timings_ms": {
+        "mimi_encode": 0.017708007362671196,
+        "lm_forward": 273.46816699719056,
+        "mimi_decode": 44.029124997905456,
+        "total": 317.83483301114757
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 223,
+      "timestamp_unix": 1769565859.500525,
+      "timings_ms": {
+        "mimi_encode": 0.022124993847683072,
+        "lm_forward": 271.0567500034813,
+        "mimi_decode": 42.628958995919675,
+        "total": 313.9014589978615
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 224,
+      "timestamp_unix": 1769565859.8403578,
+      "timings_ms": {
+        "mimi_encode": 0.01675001112744212,
+        "lm_forward": 265.18783399660606,
+        "mimi_decode": 43.35791600169614,
+        "total": 308.846584011917
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 225,
+      "timestamp_unix": 1769565860.1736162,
+      "timings_ms": {
+        "mimi_encode": 0.03429201024118811,
+        "lm_forward": 270.62704200216103,
+        "mimi_decode": 43.76724999747239,
+        "total": 314.6717920026276
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 226,
+      "timestamp_unix": 1769565860.5119512,
+      "timings_ms": {
+        "mimi_encode": 0.017582991858944297,
+        "lm_forward": 276.2345420051133,
+        "mimi_decode": 44.30008299823385,
+        "total": 320.8059169992339
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 227,
+      "timestamp_unix": 1769565860.858925,
+      "timings_ms": {
+        "mimi_encode": 0.029084010748192668,
+        "lm_forward": 272.49424999172334,
+        "mimi_decode": 43.53966600319836,
+        "total": 316.38900001416914
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 228,
+      "timestamp_unix": 1769565861.2026172,
+      "timings_ms": {
+        "mimi_encode": 0.01187498855870217,
+        "lm_forward": 274.3601250112988,
+        "mimi_decode": 42.88245798670687,
+        "total": 317.5485829997342
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 229,
+      "timestamp_unix": 1769565861.5472379,
+      "timings_ms": {
+        "mimi_encode": 0.023415996110998094,
+        "lm_forward": 267.71616699988954,
+        "mimi_decode": 44.55416700511705,
+        "total": 312.52445800055284
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 230,
+      "timestamp_unix": 1769565861.885379,
+      "timings_ms": {
+        "mimi_encode": 0.01783299376256764,
+        "lm_forward": 261.66933300555684,
+        "mimi_decode": 43.51824999321252,
+        "total": 305.3979579999577
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18282.0,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 231,
+      "timestamp_unix": 1769565862.2155268,
+      "timings_ms": {
+        "mimi_encode": 0.02387499262113124,
+        "lm_forward": 267.90716699906625,
+        "mimi_decode": 44.34849999961443,
+        "total": 312.49179199221544
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.3,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 232,
+      "timestamp_unix": 1769565862.552446,
+      "timings_ms": {
+        "mimi_encode": 0.019915998564101756,
+        "lm_forward": 266.90195899573155,
+        "mimi_decode": 46.41479100973811,
+        "total": 313.6893329938175
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 233,
+      "timestamp_unix": 1769565862.890613,
+      "timings_ms": {
+        "mimi_encode": 0.013124998076818883,
+        "lm_forward": 283.1317500094883,
+        "mimi_decode": 44.33533299015835,
+        "total": 327.693208004348
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 234,
+      "timestamp_unix": 1769565863.244494,
+      "timings_ms": {
+        "mimi_encode": 0.012707998394034803,
+        "lm_forward": 266.38379199721385,
+        "mimi_decode": 44.22908299602568,
+        "total": 310.8485419943463
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.8,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 235,
+      "timestamp_unix": 1769565863.580291,
+      "timings_ms": {
+        "mimi_encode": 0.015375000657513738,
+        "lm_forward": 265.26262499100994,
+        "mimi_decode": 43.807875001220964,
+        "total": 309.27183300082106
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 236,
+      "timestamp_unix": 1769565863.9153368,
+      "timings_ms": {
+        "mimi_encode": 0.015958008589223027,
+        "lm_forward": 272.5594999938039,
+        "mimi_decode": 44.67458400176838,
+        "total": 317.4711669998942
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 237,
+      "timestamp_unix": 1769565864.258962,
+      "timings_ms": {
+        "mimi_encode": 0.016624995623715222,
+        "lm_forward": 267.4474170053145,
+        "mimi_decode": 43.80400000081863,
+        "total": 311.46287500450853
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 238,
+      "timestamp_unix": 1769565864.596514,
+      "timings_ms": {
+        "mimi_encode": 0.01720800355542451,
+        "lm_forward": 264.47587499569636,
+        "mimi_decode": 43.33091700391378,
+        "total": 308.03870799718425
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 239,
+      "timestamp_unix": 1769565864.929319,
+      "timings_ms": {
+        "mimi_encode": 0.015832993085496128,
+        "lm_forward": 263.184541996452,
+        "mimi_decode": 43.72100000909995,
+        "total": 307.1208749897778
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 240,
+      "timestamp_unix": 1769565865.260386,
+      "timings_ms": {
+        "mimi_encode": 0.019500002963468432,
+        "lm_forward": 266.6557920019841,
+        "mimi_decode": 44.562374998349696,
+        "total": 311.43849999352824
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 241,
+      "timestamp_unix": 1769565865.596616,
+      "timings_ms": {
+        "mimi_encode": 0.013374999980442226,
+        "lm_forward": 262.14216600055806,
+        "mimi_decode": 44.96612500224728,
+        "total": 307.32183301006444
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.8,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 242,
+      "timestamp_unix": 1769565865.928885,
+      "timings_ms": {
+        "mimi_encode": 0.010042000212706625,
+        "lm_forward": 261.64145799702965,
+        "mimi_decode": 45.34245899412781,
+        "total": 307.15929200232495
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.2,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 243,
+      "timestamp_unix": 1769565866.260225,
+      "timings_ms": {
+        "mimi_encode": 0.015999990864656866,
+        "lm_forward": 264.4160420022672,
+        "mimi_decode": 42.94662500615232,
+        "total": 307.658249992528
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.1,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 244,
+      "timestamp_unix": 1769565866.5920799,
+      "timings_ms": {
+        "mimi_encode": 0.01637499372009188,
+        "lm_forward": 264.1839169955347,
+        "mimi_decode": 44.15483301272616,
+        "total": 308.5671669978183
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.7,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 245,
+      "timestamp_unix": 1769565866.924474,
+      "timings_ms": {
+        "mimi_encode": 0.012874996173195541,
+        "lm_forward": 268.14033300615847,
+        "mimi_decode": 44.84029200102668,
+        "total": 313.1976250006119
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.5,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 246,
+      "timestamp_unix": 1769565867.2621179,
+      "timings_ms": {
+        "mimi_encode": 0.0212500017369166,
+        "lm_forward": 261.9530839874642,
+        "mimi_decode": 45.13345799932722,
+        "total": 307.3107919917675
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 247,
+      "timestamp_unix": 1769565867.593413,
+      "timings_ms": {
+        "mimi_encode": 0.012459000572562218,
+        "lm_forward": 261.89004100160673,
+        "mimi_decode": 42.068209004355595,
+        "total": 304.1769999981625
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.6,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 248,
+      "timestamp_unix": 1769565867.9229429,
+      "timings_ms": {
+        "mimi_encode": 0.016417005099356174,
+        "lm_forward": 284.2890829924727,
+        "mimi_decode": 45.73583400633652,
+        "total": 330.25320900196675
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18280.9,
+        "driver": 18832.2
+      }
+    },
+    {
+      "frame_idx": 249,
+      "timestamp_unix": 1769565868.280543,
+      "timings_ms": {
+        "mimi_encode": 0.01416700251866132,
+        "lm_forward": 266.31954198819585,
+        "mimi_decode": 43.5915000125533,
+        "total": 310.13204199553
+      },
+      "missed": true,
+      "memory_mb": {
+        "allocated": 18281.4,
+        "driver": 18832.2
+      }
+    }
+  ],
+  "summary": {
+    "total_frames": 250,
+    "missed_frames": 250,
+    "missed_pct": 100.0,
+    "avg_frame_ms": 313.4,
+    "p50_frame_ms": 311.7,
+    "p95_frame_ms": 327.7,
+    "p99_frame_ms": 336.0,
+    "max_frame_ms": 381.6,
+    "min_frame_ms": 296.3,
+    "avg_mimi_encode_ms": 0.0,
+    "avg_lm_forward_ms": 268.9,
+    "avg_mimi_decode_ms": 44.2,
+    "peak_memory_mb": 18832.0,
+    "backend": "mps",
+    "device": "Apple M3 Max"
+  }
+}
